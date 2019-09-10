@@ -398,6 +398,102 @@ public class Utility {
 		return array;
 		
 	}
+	
+	/**
+	 * purpose : this method used to search integer value using binary search
+	 * 
+	 * @param lowerValue : initial value
+	 * @param key        : finding element
+	 * @param highValue  : ending value 
+	 * @return : return your finding number
+	 */
+	public static int binarySearchIntValue(int lowerValue,int key,int highValue) {
+		int mid;
+		int flag=0;
+		while(lowerValue<=highValue) {
+			mid=lowerValue+highValue/2;
+			if(mid==key) {
+				flag=1;
+				return mid;
+			}else if(mid<key) {
+				lowerValue=mid+1;
+			}else {
+				highValue=mid-1;
+			}
+		}
+		if(lowerValue>highValue) {
+			return flag;
+		}
+	 return flag;
+	}
+	
+	
+	/**
+	 * purpose : this method used to search string value using binary search
+	 * 
+	 * @param stringArray : string array type
+	 * @param key         : your element
+	 * @return : return your finding element
+	 */
+	public static int binarySearchStringValue(String stringArray[],String key) {
+		int low=0;
+		int high=stringArray.length;
+		int mid;
+		while (low <= high) {
+            mid = (low + high) / 2;
+
+            if (stringArray[mid].compareTo(key) < 0) {
+                low = mid + 1;
+            } else if (stringArray[mid].compareTo(key) > 0) {
+                high = mid - 1;
+            } else {
+                return mid;
+            }
+        }
+
+        return -1;
+	}
+	/** purpose : this method used to sort integer value using insertion sort
+	 * 
+	 * @param insertionArray : integer array value
+	 * @param size : length of array
+	 */
+	public static void insertionSortIntValue(int insertionArray[],int size) {
+		int temp;
+		int postion;
+		for(int index=0;index<size;index++) {
+			postion=index;
+			for(int index1=index+1;index1>=0;index1--) {
+				if(insertionArray[index]>insertionArray[index1]) {
+					temp=insertionArray[index];
+					insertionArray[index]=insertionArray[index1];
+					insertionArray[index1]=temp;
+				}
+				postion=postion-1;
+			}
+		}
+	}
+	/** purpose : this method used to sort string value using insertion sort
+	 * 
+	 * @param array : string value array
+	 * @param size : length of array
+	 */
+	public static void insertionSortString(String[] array, int size) {
+		  String temp;
+		  int postion;
+		  for(int i=0;i<size;i++){
+			  postion=i;
+			  for(int j=i+1;j>=0;j--){	  
+				 if(j<size && postion>=0)
+			  if(array[postion].compareTo(array[j])>0){
+			  temp = array[postion];
+			  array[postion]=array[j];
+			  array[j]=temp;
+			  }
+				 postion=postion-1;
+			  }
+		  }
+	}
 		
 
 }
