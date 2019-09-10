@@ -14,6 +14,7 @@ public class Anagram {
 
 	public static void main(String[] args) {
 		System.out.println("Enter first string");
+		System.out.println();
 		String string1=Utility.scanString();
 		System.out.println("Enter second string");
 		String string2=Utility.scanString();
