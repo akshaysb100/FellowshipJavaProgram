@@ -196,13 +196,12 @@ public class Utility {
 		
 		double winPercentage;
 		 int win=0;
-		 //int bet=0;
+		
 		 for(int i=0;i<trails;i++)
 		 {
-			  
 			 int cash=stake;
 			 while(cash>0 && cash<goal) {
-				//bet++;
+				
 			 if(Math.random()<0.5)
 			 {
 				 cash++;
@@ -247,22 +246,19 @@ public class Utility {
 	/**
 	 * purpose : this fuction calculate coupon number
 	 * @param number : number of cards
-	 * @return : return count
+	 * @return : generated random number count
 	 */
-
-	public static int getCoupon(int n) {
-        return (int) (Math.random() * n);
-    }
-
 	public static int collect(int number) {
 		 boolean[] isCollected = new boolean[number];  
 	        int count = 0;                         
 	        int distinct  = 0;                       
-             // Random random = new Random();
-	        // repeat until you've collected all n card types
+              Random random = new Random();
+            number=number-1;
+	        
 	        while (distinct < number) {
-	            int value = getCoupon(number);    
-	            count++;                             
+	           
+	           int value = 0+random.nextInt(number);
+	        	count++;                             
 	            if (!isCollected[value]) {          
 	                distinct++;
 	                isCollected[value] = true;
@@ -370,9 +366,9 @@ public class Utility {
 	/**
 	 * purpose : this fuction used to check number are prime number or not 
 	 * 
-	 * @param array : 
-	 * @param range
-	 * @return
+	 * @param array : positive integer number
+	 * @param range : range of positive number
+	 * @return : return prime number
 	 */
 	public static int[] rangeOfPrimeNumber(int[] array, int range) {
 		int count=0;
@@ -391,11 +387,16 @@ public class Utility {
 			
 			if(number1==number)
 			{
-				array[count]=number;
+				  array[count]=number;
 				count++;
 			}
 		}
-		return array;
+		int primeArray[]=new int[count];
+		
+		for(index=0;index<count;index++) {
+			primeArray[index]=array[index];
+		}
+		return primeArray;
 		
 	}
 	
@@ -407,15 +408,15 @@ public class Utility {
 	 * @param highValue  : ending value 
 	 * @return : return your finding number
 	 */
-	public static int binarySearchIntValue(int lowerValue,int key,int highValue) {
+	public static int binarySearchIntValue(int array[],int lowerValue,int key,int highValue) {
 		int mid;
 		int flag=0;
 		while(lowerValue<=highValue) {
-			mid=lowerValue+highValue/2;
-			if(mid==key) {
+			mid=(lowerValue+highValue)/2;
+			if(array[mid]==key) {
 				flag=1;
-				return mid;
-			}else if(mid<key) {
+				return key;
+			}else if(array[mid]<key) {
 				lowerValue=mid+1;
 			}else {
 				highValue=mid-1;
@@ -458,20 +459,22 @@ public class Utility {
 	 * @param insertionArray : integer array value
 	 * @param size : length of array
 	 */
-	public static void insertionSortIntValue(int insertionArray[],int size) {
+	public static void insertionSortIntegerValue(int insertionArray[],int size) {
 		int temp;
 		int postion;
 		for(int index=0;index<size;index++) {
 			postion=index;
 			for(int index1=index+1;index1>=0;index1--) {
-				if(insertionArray[index]>insertionArray[index1]) {
-					temp=insertionArray[index];
-					insertionArray[index]=insertionArray[index1];
+				if(index1<size && postion>=0)
+				if(insertionArray[postion]>insertionArray[index1]) {
+					temp=insertionArray[postion];
+					insertionArray[postion]=insertionArray[index1];
 					insertionArray[index1]=temp;
 				}
 				postion=postion-1;
 			}
 		}
+		
 	}
 	/** purpose : this method used to sort string value using insertion sort
 	 * 
@@ -480,7 +483,7 @@ public class Utility {
 	 */
 	public static void insertionSortString(String[] array, int size) {
 		  String temp;
-		  int postion;
+		  int postion=0;
 		  for(int i=0;i<size;i++){
 			  postion=i;
 			  for(int j=i+1;j>=0;j--){	  
@@ -493,6 +496,121 @@ public class Utility {
 				 postion=postion-1;
 			  }
 		  }
+	}
+	/**
+	 * purpose : this method used to sort integer value using bubble sort
+	 * 
+	 * @param bubbleSortArray
+	 */
+	public static void bubbleSortIntegerValue(int bubbleSortArray[]) {
+		int temp;
+		for(int index=0;index<bubbleSortArray.length;index++) {
+			for(int index1=0;index1<bubbleSortArray.length;index1++) {
+				if(bubbleSortArray[index1]>bubbleSortArray[index]) {
+				temp=bubbleSortArray[index];
+			    bubbleSortArray[index]=bubbleSortArray[index1];
+			    bubbleSortArray[index1]=temp;
+				}
+			}
+		}
+	}
+	
+	/**
+	 * purpose : this method used to sort string value using bubble sort
+	 * 
+	 * @param bubbleSortArray
+	 */
+	public static void bubbleSortStringValue(String bubbleSortArray[]) {
+		String temp;
+		for(int index=0;index<bubbleSortArray.length;index++) {
+			for(int index1=0;index1<bubbleSortArray.length;index1++) {
+				if(bubbleSortArray[index].compareTo(bubbleSortArray[index1])<0) {
+					temp=bubbleSortArray[index];
+					bubbleSortArray[index]=bubbleSortArray[index1];
+					bubbleSortArray[index1]=temp;
+				}
+			}
+		}
+	}
+
+	/**
+	 * Purpose : This function used to find the prime fator of number
+	 * 
+	 * @param number : prime factorization number
+	 */
+	public static void primeFactor(int number) {
+		for(int primeFactor=2;primeFactor<number;primeFactor++) {
+			while(number%primeFactor==0) {
+				System.out.print(primeFactor+" ");
+				number=number/primeFactor;
+			}
+		}
+		if(number>2) {
+			System.out.print(number);
+		}
+		
+	}
+
+	/**
+	 * purpose : this fuction used for three number addition is zero or not 
+	 *
+	 * @param array : integer array value 
+	 */
+	public static void sumOfResultZero(int[] array) {
+        int sum=0; 
+		for(int i=0;i<array.length;i++) {
+			
+			for(int j=0;j<array.length;j++) {
+				
+				for(int k=0;k<array.length;k++) {
+					sum=0;
+					if(i!=j && i!=k && j!=k) {
+						sum=array[i]+array[j]+array[k];
+						
+						if(sum==0)
+						{
+							System.out.println(array[i]+" "+array[j]+" "+ array[k]);
+						}
+					}
+					
+				}
+				
+			}
+		}
+		
+	}
+
+	/**
+	 * purpose : this function used elapsetime calculation
+	 * 
+	 * @return : epapsetime of system
+	 */
+	public static double stopWatch() {
+		double elapsetime = 0;
+		System.out.println("Enter 0 to start stopwatch");
+		int start=Utility.scanInt();
+		long startTime=0;
+		long stopTime=0;
+		
+		if(start==0)
+		{
+			startTime=System.currentTimeMillis();
+			System.out.print("Start timing is : ");
+			System.out.println(startTime);
+		}
+		System.out.println("Enter 1 to stop stopwatch");
+		int stop=Utility.scanInt();
+		
+		if(stop==1)
+		{
+			stopTime=System.currentTimeMillis();
+			System.out.print("stop timing is : ");
+			System.out.println(stopTime);
+            elapsetime=(stopTime-startTime);
+            System.out.println("Elapsetime : "+elapsetime);
+		}
+
+		return elapsetime;
 	}
 		
 

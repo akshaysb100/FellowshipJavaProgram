@@ -39,7 +39,9 @@ public class TicTacToe {
         int i;
        
         player = 'X';
-        for (i=1; i<10; i++) posn[i]=posndef[i];
+        for (i=1; i<10; i++) {
+        posn[i]=posndef[i];
+        }
         currentBoard();
         
         
@@ -69,14 +71,12 @@ public class TicTacToe {
         System.out.println(  "Player " + getPlayer() +" will go first and be the letter 'X'" );
         
         do {
-            currentBoard();              // display current board
+            currentBoard();            
             
             System.out.println(  "\n\n Player " + getPlayer() +" choose a posn." );
             
             boolean posTaken = true;
             while (posTaken) {
-                // System.out.println( "position is taken, please enter a valid space");
-               
                 spot=Utility.scanInt();
                 posTaken = checkPosn(spot);
                 if(posTaken==false)
@@ -85,7 +85,7 @@ public class TicTacToe {
             
             System.out.println(  "Nice move." );
             
-            currentBoard();              // display current board
+            currentBoard();              
             
             nextPlayer();
         }while ( checkWinner() == blank );
@@ -157,9 +157,6 @@ public class TicTacToe {
         else {
             return false;
         }
-        
-        //  counter++;
-        //    return false;
     }
     
     

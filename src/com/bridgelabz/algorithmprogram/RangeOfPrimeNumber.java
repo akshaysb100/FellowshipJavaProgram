@@ -19,11 +19,6 @@ public class RangeOfPrimeNumber {
 		 
 		int primeArray[]= Utility.rangeOfPrimeNumber(array,range);
 		
-		/*
-		 * System.out.println(" range :"+range); 
-		 * for(int i=0;i<array.length;i++) {
-		 * System.out.println(array[i]); }
-		 */
 		  for(int i=0;i<primeArray.length;i++) {
 			  System.out.println(primeArray[i]);
 			  }
