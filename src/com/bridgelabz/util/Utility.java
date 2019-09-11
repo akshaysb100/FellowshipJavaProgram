@@ -37,6 +37,10 @@ public class Utility {
     	String value = scanner.next();
     	return value;
     }
+    public static double scanDouble() {
+    	double value=scanner.nextDouble();
+    	return value;
+    }
 
 	/**
 	 * purpose : This function used for find second maximum element
@@ -337,9 +341,9 @@ public class Utility {
 		
 		//System.out.println("length : "+l+" "+l1);
 		if(l==l1) {
-		for(int i=0;i<=l-1;i++)
+		for(int i=0;i<l;i++)
 		{
-		for(int j=0;j<=l-1;j++)
+		for(int j=0;j<l;j++)
 			{
 				if(string1.charAt(i)==string2.charAt(j))
 				{
@@ -611,6 +615,77 @@ public class Utility {
 		}
 
 		return elapsetime;
+	}
+
+	/**
+	 * purpose : This function find out day of week
+	 * 
+	 * @param  day    day of month
+	 * @param  month  month of year
+	 * @param  year   which one year
+	 * @return day1  day of week 
+	 */
+	public static int dayOfWeek(int day, int month, int year) {
+		int day1,month1,year1;
+		  int year3;//find leap year or not
+		  year1=year-(14-month)/12;
+		  year3=year1+year1/4-year1/100+year1/400;
+		  month1=month+12*((14-month)/12)-2;
+		  day1=(day+year3+(31*month1)/12)%7;
+		
+		  return day1;
+		
+	}
+
+	/**
+	 * purpose :  This function used temperature Conversion
+	 * 
+	 * @param celsius    pass celsius value
+	 * @param fahrenheit pass fahrenheit value
+	 */
+	public static void temperaturConversion(double celsius, double fahrenheit) {
+		int choice;
+        System.out.println("Enter your choice \n 1:Celsius to Fahrenheit :\n 2:Fahrenheit to Celsius :");
+        choice=Utility.scanInt();
+        switch(choice)
+        {
+        case 1:
+      	      System.out.println("Celsius to Fahrenheit : "+ (celsius*(9/5))+32 );
+      	      break;
+        case 2:
+      	      System.out.println("Fahrenheit to Celsius : "+(fahrenheit-32)*(5/9));
+      	      break;
+        default:
+      	  System.out.println("Wrong Choice");
+        
+        }
+		
+	}
+	/**
+	 * purpose : this function is used calculates the monthly payments on loan
+	 * 
+	 * @param principalAmount principal loan amount
+	 * @param year    how much year
+	 * @param rate    how much rate to year
+	 */
+
+	public static void monthlyPayment(double principalAmount, double year, double rate) {
+		rate = rate/(12*100);
+	     double month=12*year;
+	     
+	     principalAmount =(principalAmount*rate)/1-(Math.pow(1+rate,(-month)));
+	     System.out.println("Monthly interest : "+principalAmount);
+		
+	}
+
+	public static String decimalToBinary(int number) {
+		 String binay="";
+	        while(number>0) {
+	      	  binay=(number%2)+binay;
+	      	  number=number/2;
+	        }
+	       // System.out.println("number : "+temp+"\ndecimal to binary representation : "+binay);
+	        return binay;
 	}
 		
 

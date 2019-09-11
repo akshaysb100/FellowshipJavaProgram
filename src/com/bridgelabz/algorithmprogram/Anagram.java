@@ -14,7 +14,6 @@ public class Anagram {
 
 	public static void main(String[] args) {
 		System.out.println("Enter first string");
-		System.out.println();
 		String string1=Utility.scanString();
 		System.out.println("Enter second string");
 		String string2=Utility.scanString();
@@ -23,9 +22,9 @@ public class Anagram {
 		boolean value =Utility.Anagram(string1,string2);
 		
 		if(value==true)
-			System.out.println("String "+string1+" and "+string2+" are anagram");
+			System.out.println("String "+string1+" and "+string2+" are anagram String");
 		else {
-			System.out.println("String "+string1+" and "+string2+" not anagram");
+			System.out.println("String "+string1+" and "+string2+" not anagram String");
 		}
 
 	}
