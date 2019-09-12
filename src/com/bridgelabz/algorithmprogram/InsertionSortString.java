@@ -8,8 +8,7 @@
  *******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
-import com.bridgelabz.util.Utility;
-
+import com.bridgelabz.util.AlgorithmUtility;
 public class InsertionSortString {
 
 	public static void main(String[] args) {
@@ -17,16 +16,16 @@ public class InsertionSortString {
 	 //    String[] insertionSortArray = {"sk","ak","za","aa","dk"};
 		
 		   System.out.println("How much element you enter : ");
-		   int numberOfCount=Utility.scanInt();
+		   int numberOfCount=AlgorithmUtility.scanInt();
 		
 		   String[] insertionSortArray = new String[numberOfCount];
 		   System.out.println("Enter String elements : ");
 	       for(int index=0;index<insertionSortArray.length;index++) {
-	    	   insertionSortArray[index]=Utility.scanString();
+	    	   insertionSortArray[index]=AlgorithmUtility.scanString();
 	       }
 	       
 	       System.out.println("Insertion sort program String : ");
-	       Utility.insertionSortString(insertionSortArray, insertionSortArray.length);
+	       AlgorithmUtility.insertionSortString(insertionSortArray, insertionSortArray.length);
 	       for(int index=0;index<insertionSortArray.length;index++) {
 	    	   System.out.print(insertionSortArray[index]+" ");
 	       }

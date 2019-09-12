@@ -8,13 +8,14 @@
  ******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
-import com.bridgelabz.util.Utility;
+import com.bridgelabz.util.AlgorithmUtility;
+
 
 public class FindYourNumber {
 
 	public static void main(String[] args) {
 		System.out.println("Enetr number : ");
-		int number=Utility.scanInt();
+		int number=AlgorithmUtility.scanInt();
 		int sum=1;
 
 		for(int i=0;i<number;i++)
@@ -25,7 +26,7 @@ public class FindYourNumber {
 		int number1=sum-1;
 		System.out.println("sum of the number : "+number1);
 		System.out.println("Enter your key");
-		int key=Utility.scanInt();
+		int key=AlgorithmUtility.scanInt();
 
 		   binay(key, 0, number1, number);
 			}
@@ -41,7 +42,7 @@ public class FindYourNumber {
 					System.out.println("It is your number : "+mid);
 					System.out.println("Enetr ypour choice : \n1 No than enter n:     \n2: yes than enter y");
 					
-					String s=Utility.scanString();
+					String s=AlgorithmUtility.scanString();
 					char p=s.charAt(0);
 					
 					switch(p) {

@@ -8,13 +8,12 @@
  ******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
-import com.bridgelabz.util.Utility;
-
+import com.bridgelabz.util.AlgorithmUtility;
 public class VendingMachine {
 
 	public static void main(String[] args) {
 		System.out.println("Enter how much Amount you withdraw : ");
-        int amount = Utility.scanInt();
+        int amount = AlgorithmUtility.scanInt();
         int note1000=0,note500=0,note100=0,note50=0,note20=0,note10=0,note1=0;
         while(amount>0) {
         	if(amount>=1000) {

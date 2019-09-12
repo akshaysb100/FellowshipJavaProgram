@@ -10,8 +10,8 @@ package com.bridgelabz.algorithmprogram;
 
 import java.io.FileReader;
 import java.io.IOException;
-import com.bridgelabz.util.Utility;
 
+import com.bridgelabz.util.AlgorithmUtility;
 public class BinarySearchString {
 
 	public static void main(String[] args) {
@@ -27,7 +27,7 @@ public class BinarySearchString {
 	          
 
 	            String[] array=s.split(",");
-	            Utility.bubbleSortStringValue(array);
+	            AlgorithmUtility.bubbleSortStringValue(array);
 	            String search = "or";
 	            
 		        System.out.println("Your file elements");
@@ -38,7 +38,7 @@ public class BinarySearchString {
 		        System.out.println("");
 	
 		        int value;
-		        value= Utility.binarySearchStringValue(array, search);
+		        value= AlgorithmUtility.binarySearchStringValue(array, search);
 		        if(value>=0) {
 		         for(int index=0;index<array.length;index++) {
 		      	   if(array[index]==array[value]) {

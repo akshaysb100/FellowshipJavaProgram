@@ -8,24 +8,23 @@
  *******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
-import com.bridgelabz.util.Utility;
-
+import com.bridgelabz.util.AlgorithmUtility;
 public class SampleProgram {
 
 	public static void main(String[] args) {
 		
-     int array[] = {10,20,11,15,13,18,16};
-     int size=array.length;
+//     int array[] = {10,20,11,15,13,18,16};
+   //  int size=array.length;
      System.out.println("bubble sort program : ");
        int[] bubbleSortArray = {10,20,11,15,13,18,16};
-       Utility.bubbleSortIntegerValue(bubbleSortArray);
+       AlgorithmUtility.bubbleSortIntegerValue(bubbleSortArray);
        for(int index=0;index<bubbleSortArray.length;index++) {
     	   System.out.print(bubbleSortArray[index]+" ");
        }
        System.out.println();
        String[] bubbleSortArray1 = {"sk","ak","za","aa","dk"};
        System.out.println("bubble sort program String : ");
-       Utility.bubbleSortStringValue(bubbleSortArray1);
+       AlgorithmUtility.bubbleSortStringValue(bubbleSortArray1);
        for(int index=0;index<bubbleSortArray1.length;index++) {
     	   System.out.print(bubbleSortArray1[index]+" ");
        }
@@ -35,7 +34,7 @@ public class SampleProgram {
        String stringArray[]=bubbleSortArray1;
        String key="aks";
       int value;
-      value= Utility.binarySearchStringValue(stringArray, key);
+      value= AlgorithmUtility.binarySearchStringValue(stringArray, key);
       if(value>=0) {
        for(int index=0;index<stringArray.length;index++) {
     	   if(stringArray[index]==stringArray[value]) {

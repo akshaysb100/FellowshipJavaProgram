@@ -8,8 +8,7 @@
  ******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
-import com.bridgelabz.util.Utility;
-
+import com.bridgelabz.util.AlgorithmUtility;
 public class MonthlyPayment {
 
 	public static void main(String[] args) {
@@ -20,7 +19,7 @@ public class MonthlyPayment {
 		//	System.out.println("Enter Amount");
 		    double rate=Double.parseDouble(args[2]);
 		    
-		    Utility.monthlyPayment(principalAmount,year,rate);
+		    AlgorithmUtility.monthlyPayment(principalAmount,year,rate);
 		    
 
 	}

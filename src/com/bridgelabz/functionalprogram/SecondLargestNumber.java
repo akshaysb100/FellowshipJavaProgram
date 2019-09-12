@@ -1,18 +1,9 @@
-/******************************************************************************
- *  Purpose: Find Second Largest Number In Array
- *
- *  @author  Akshay
- *  @version 1.0
- *  @since   10-09-2019
- *
- ******************************************************************************/
-
-package com.bridgelabz.basicjavaprogram;
+package com.bridgelabz.functionalprogram;
 
 import com.bridgelabz.util.Utility;
 
 public class SecondLargestNumber {
-	
+
 	public static void main(String[] args) {
 		System.out.println("Enter the length of array : ");
 		int length=Utility.scanInt();
@@ -26,6 +17,7 @@ public class SecondLargestNumber {
 		
 		System.out.println("Second largest element is : "+Utility.secondLargestNumber(maxArray,length));
 		
+
 	}
 
 }

@@ -8,8 +8,7 @@
  *******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
-import com.bridgelabz.util.Utility;
-
+import com.bridgelabz.util.AlgorithmUtility;
 public class DayOfWeek {
 
 	public static void main(String[] args) {
@@ -20,7 +19,7 @@ public class DayOfWeek {
 		        int month=Integer.parseInt(args[1]);
 		       // System.out.println("Enter year");
 		        int year=Integer.parseInt(args[2]);
-		        System.out.println("Day Of Week : "+Utility.dayOfWeek(day,month,year));
+		        System.out.println("Day Of Week : "+AlgorithmUtility.dayOfWeek(day,month,year));
 
 	}
 

@@ -8,7 +8,7 @@
  *******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
-import com.bridgelabz.util.Utility;
+import com.bridgelabz.util.AlgorithmUtility;
 
 public class BubbleSortInteger {
 
@@ -16,7 +16,7 @@ public class BubbleSortInteger {
 		
 	       System.out.println("bubble sort program : ");
 	       int[] bubbleSortArray = {10,20,11,15,13,18,16};
-	       Utility.bubbleSortIntegerValue(bubbleSortArray);
+	       AlgorithmUtility.bubbleSortIntegerValue(bubbleSortArray);
 	       for(int index=0;index<bubbleSortArray.length;index++) {
 	    	   System.out.print(bubbleSortArray[index]+" ");
 	       }

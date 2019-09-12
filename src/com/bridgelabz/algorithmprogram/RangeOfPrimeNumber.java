@@ -8,16 +8,15 @@
  *******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
-import com.bridgelabz.util.Utility;
-
+import com.bridgelabz.util.AlgorithmUtility;
 public class RangeOfPrimeNumber {
 
 	public static void main(String[] args) {
 		System.out.println("Enter the Prime number range : ");
-		int range=Utility.scanInt();
+		int range=AlgorithmUtility.scanInt();
 		  int array[]=new int[range];
 		 
-		int primeArray[]= Utility.rangeOfPrimeNumber(array,range);
+		int primeArray[]= AlgorithmUtility.rangeOfPrimeNumber(array,range);
 		
 		  for(int i=0;i<primeArray.length;i++) {
 			  System.out.println(primeArray[i]);

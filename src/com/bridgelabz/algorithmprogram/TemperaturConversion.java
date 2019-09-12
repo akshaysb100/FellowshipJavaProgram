@@ -8,18 +8,17 @@
  ******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
-import com.bridgelabz.util.Utility;
-
+import com.bridgelabz.util.AlgorithmUtility;
 public class TemperaturConversion {
 
 	public static void main(String[] args) {
 		
 		System.out.println("Enter value for Celsius");
-		double celsius=Utility.scanDouble();
+		double celsius=AlgorithmUtility.scanDouble();
 		System.out.println("Enter value for Fahrenheit");
-		double fahrenheit=Utility.scanDouble();
+		double fahrenheit=AlgorithmUtility.scanDouble();
 		
-		Utility.temperaturConversion(celsius,fahrenheit);
+		AlgorithmUtility.temperaturConversion(celsius,fahrenheit);
 
 
 	}

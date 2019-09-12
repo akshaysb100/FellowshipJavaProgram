@@ -8,6 +8,7 @@
  *******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
+import com.bridgelabz.util.AlgorithmUtility;
 import com.bridgelabz.util.Utility;
 
 public class Anagram {
@@ -19,7 +20,7 @@ public class Anagram {
 		String string2=Utility.scanString();
 	    string1=string1.toLowerCase();
 		string2=string2.toLowerCase();
-		boolean value =Utility.Anagram(string1,string2);
+		boolean value =AlgorithmUtility.Anagram(string1,string2);
 		
 		if(value==true)
 			System.out.println("String "+string1+" and "+string2+" are anagram String");

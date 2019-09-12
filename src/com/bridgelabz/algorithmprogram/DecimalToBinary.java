@@ -8,6 +8,7 @@
  ******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
+import com.bridgelabz.util.AlgorithmUtility;
 import com.bridgelabz.util.Utility;
 
 public class DecimalToBinary {
@@ -15,8 +16,8 @@ public class DecimalToBinary {
 	public static void main(String[] args) {
 		
         System.out.println("Ente number");
-        int number=Utility.scanInt();
-       String binay= Utility.decimalToBinary(number);
+        int number=AlgorithmUtility.scanInt();
+       String binay= AlgorithmUtility.decimalToBinary(number);
         
         System.out.println("number : "+number+"\ndecimal to binary representation : "+binay);
 	}

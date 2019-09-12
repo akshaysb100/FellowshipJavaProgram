@@ -10,43 +10,47 @@ package com.bridgelabz.datastructureprograms;
 
 import java.io.FileReader;
 
-import com.bridgelabz.util.Utility;
+import com.bridgelabz.util.DataStructurUtility;
+
 public class SearchDeleteAdd {
 
 	public static void main(String[] args) {
 try {
 	
+	        DataStructurUtility<String> util=new DataStructurUtility<String>();
 			FileReader reader=new FileReader("//home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/datastructureprograms/SearchDeleteAdd.txt");
 			    int character;
-	            String split="";
+	            String s="";
 			
 	            for(character=0;(character=reader.read())!=-1;character++) {
 	            	
-	            	split=split+(char) character;
+	            	s=s+(char) character;
 	            }
 	            
-	            String[] searchString = split.split(",");
+	            String[] searchString = s.split(",");
 	           
 	            for(int index=0;index<searchString.length;index++) {
-	            	   Utility.addList(searchString[index]);
+	            	   util.addList(searchString[index]);
 	            }
 	            System.out.println("List element of  file : ");
-	            Utility.viewList();
+	            util.viewList();
 	            
 	            System.out.println();
 	            System.out.println("if string is not found than add string else if string is found than delete string : ");
-	            Utility.searchData("aa");
-	            Utility.viewList();
+	            String string=util.scanString();
+	            util.searchData(string);
+	            util.viewList();
 	            
 	            System.out.println();
 	            System.out.println("if string is found than delete string else if string in not found than add string : ");
-	            Utility.searchData("ap");
-	            Utility.viewList();
+	            String String1=util.scanString();
+	            util.searchData(String1);
+	            util.viewList();
 	            
 	            System.out.println();
 	            System.out.println("Element is write in file : ");
-	            Utility.viewList();
-	            Utility.addFile();
+	            util.viewList();
+	            util.addFile();
 	            
 	            reader.close();
 	          
