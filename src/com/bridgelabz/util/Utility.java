@@ -9,6 +9,7 @@
 
 package com.bridgelabz.util;
 
+import java.io.FileWriter;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -678,15 +679,194 @@ public class Utility {
 		
 	}
 
+	/**
+	 * purpose : this method used to convert decimal number into binary number
+	 * @param number : positive number
+	 * @return : binary conversion
+	 */
 	public static String decimalToBinary(int number) {
 		 String binay="";
 	        while(number>0) {
 	      	  binay=(number%2)+binay;
 	      	  number=number/2;
 	        }
-	       // System.out.println("number : "+temp+"\ndecimal to binary representation : "+binay);
+	       
 	        return binay;
 	}
+	
+	                   // Data structur Program
+	
+	/*
+	 * 
+	 * Linked list program start form here(Data Structur program)
+	 * 
+	 * 
+	 */
+	
+	static Node head=null;
+    static int size=0;
+    
+    
+	/**
+	 * purpose : Dynamically Add and Delete list 
+	 * 
+	 * @author admin Akshay
+	 *
+	 */
+	static class Node{
+   	    private String string;
+   	    private Node next;
+   	    
+   	    public Node(){
+   	    string=null;
+   	    next=null;
+   	    }
+   	   
+   	    public Node(String string,Node next) {
+   	    this.string=string;
+   	    this.next=next;
+   	    }
+    }
+	
+	
+	 /**
+	  * purpose : this function used to add string dydynamically
+	  * 
+	 * @param string : string element
+	 */
+	public static void addList(String string) {
+	    	Node newNode=new Node();
+	    	newNode.string=string;
+	    	
+	    	if(head==null) {
+	    		head=newNode;
+	    	}else {
+	    	   Node	temp=head;
+	    	   while(temp.next!=null) {
+	    		   temp=temp.next;
+	    	   }
+	    	   temp.next=newNode;
+	    	}
+	    	size++;
+	    }
+	
+	    
+	    /**
+	     * purpose : this function used for display the string elements in list
+	     * 
+	     */
+	    public static void viewList() {
+	    	
+	    	if(head==null) {
+	    		System.out.println("List is empty : ");
+	    	}else {
+	    		Node temp=head;
+	    		while(temp!=null) {
+	    			System.out.print(temp.string+" ");
+	    			temp=temp.next;
+	    		}
+	    	}
+	    }
+	    
+	    
+	    /**
+	     * purpose : this function used to delete first element in string list
+	     * 
+	     */
+	    public static void deleteFirst() {
+	    	if(head==null) {
+	    		System.out.println("List is empty : ");
+	    	}else {
+	    		head=head.next;
+	    	}
+	    	size--;
+	    }
+	    
+	    
+	    /**
+	     * purpose : this function used to delete last element in string list
+	     * 
+	     */
+	    public static void deleteLast() {
+	    	Node temp=head;
+	    	for(int index=1;index<size-1;index++) {
+	    		temp=temp.next;
+	    	}
+	    	temp.next=null;
+	    	size--;
+	    }
+	    
+	    
+	    /**
+	     * purpose : this function used to delete the element at position in string list
+	     * 
+	     * @param position : postion number of delete element
+	     * 
+	     */
+	    public static void deleteAtPosition(int position) {
+	    	if(position==1) {
+	    		deleteFirst();
+	    	}else if(position==size) {
+	    		deleteLast();
+	    	}else if(position>1 && position<=size-1){
+	    		Node temp,temp1;
+	    		temp=head;
+	    		for(int index=1;index<position-1;index++) {
+	    			temp=temp.next;
+	    		}
+	    		temp1=temp.next;
+	    		temp.next=temp1.next;
+	    		
+	    	}else {
+	    		System.out.println("position is not found : ");
+	    	}
+	    	size--;
+	    }
+	    
+	    
+	    /**
+	     * purpose : this function used to search string element in list if string element is not found 
+	     *           than add the string element in list else if string element is found than delete the
+	     *           string element in list
+	     *           
+	     * @param string : serching element in list
+ 	     */
+	    public static void searchData(String string) {
+	    	Node temp=head;
+	    	int count=0;
+	    	int position=1;
+	    	while(temp!=null) {
+	    	if(temp.string.equals(string)) {
+	    		count=1;
+	    		deleteAtPosition(position);
+	    	}
+	    	position=position+1;
+	    	temp=temp.next;
+	      }
+	    	if(temp==null && count==0) {
+	    	  addList(string);
+	    	}
+	    	
+	    }
+	    
+	    /**
+	     * purpose : this function used to add string element in file using linke list
+	     * 
+	     */
+	    public static void addFile() {
+	    	try {
+	    		 FileWriter write=new FileWriter("//home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/datastructureprograms/SearchDeleteAdd.txt");
+		            Node temp=head;
+		            while(temp!=null) {
+		            	write.write(temp.string+",");
+		            	temp=temp.next;
+		            }
+		            write.close();
+	    	}catch (Exception e) {
+				System.out.println("Not write anythink in file : ");
+			}
+	    }
+
 		
 
 }

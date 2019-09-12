@@ -40,6 +40,7 @@ public class VendingMachine {
 				amount=amount-1;
 			}
         }
+        
         System.out.println("notes of 1000 : "+note1000);
         System.out.println("notes of 500 : "+note500);
         System.out.println("notes of 100 : "+note100);
