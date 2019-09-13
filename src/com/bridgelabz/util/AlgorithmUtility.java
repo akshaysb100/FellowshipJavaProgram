@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose: A utility file which contains the logic of all Algorithm programs
+ *
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   11-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.util;
 
 import java.util.Scanner;

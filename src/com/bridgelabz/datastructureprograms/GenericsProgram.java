@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose: simple generic example
+ *
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   13-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.datastructureprograms;
 
 import com.bridgelabz.util.DataStructurUtility;
@@ -19,9 +27,17 @@ public class GenericsProgram {
 	    list.addLast(2);
 	    list.addLast(6);
 	    list.addLast(5);
+	    list.printList();
+	    System.out.println();
 	   // list1.addFirst("string");
 	    list.inseartAtPosition(4, 3);
-	    list.inseartAtPosition(8, 7);
+	    list.inseartAtPosition(8, 8);
 	    list.printList();
+	    
+
+	    System.out.println();
+	    list.sortList();
+	    list.printList();
+	    
 	}  
 }

@@ -1,5 +1,5 @@
 /******************************************************************************
- *  Purpose: A utility file which contains the logic of all Algorithm programs
+ *  Purpose: A utility file which contains the logic of all functional programs
  *
  *  @author  Akshay
  *  @version 1.0

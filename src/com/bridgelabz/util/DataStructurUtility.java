@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose: A utility file which contains the logic of all Datastructur programs
+ *
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   12-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.util;
 
 import java.io.FileWriter;
@@ -13,8 +21,10 @@ public class DataStructurUtility<T> {
 		return obj;
 	}
 	
-	
+	 Node front=null;
+	 Node rear=null;
 	 Node head = null;
+	 Node top=null;
 	 int size;
    
 	 Scanner scanner=new Scanner(System.in);
@@ -232,10 +242,10 @@ public class DataStructurUtility<T> {
 		     */
 		    public  void addFile() {
 		    	try {
-		    		 FileWriter write=new FileWriter("//home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/datastructureprograms/SearchDeleteAdd.txt");
+		    		 FileWriter write=new FileWriter("//home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/datastructureprograms/OrderListAdd.txt");
 			            Node temp=head;
 			            while(temp!=null) {
-			            	write.write(temp.data+",");
+			            	write.write(temp.data+" ");
 			            	temp=temp.next;
 			            }
 			            write.close();
@@ -284,9 +294,18 @@ public class DataStructurUtility<T> {
 		    }
 		
 			
+			/**
+			 * purpose : this fuction is used to add element at particular position
+			 * @param data : element to add list
+			 * @param postion : index number of list
+			 */
 			public void inseartAtPosition(T data,int postion) {
 			
-			 if(postion>1 && postion<=size){
+				if(postion==1) {
+					addFirst1(data);
+				}else if (postion==size+1) {
+					addLast(data);
+				}else if(postion>1 && postion<=size){
 					Node newNode = new Node();
 					newNode.data=data;
 					Node temp = head;
@@ -296,6 +315,8 @@ public class DataStructurUtility<T> {
 					}
 					newNode.next=temp.next;
 					temp.next=newNode;
+				}else {
+					System.out.println("index number is wrong you insert index number between 1 to "+(size+1)+" only");
 				}
 				size++;
 			}
@@ -353,7 +374,7 @@ public class DataStructurUtility<T> {
 		    
 		    public  int index(T data) {
 		    	Node search=head;
-		    	int count=0;
+		    	int count=1;
 		    	int index=0;
 		    	while(search != null) {
 		    		if(search.data==data) {
@@ -366,7 +387,202 @@ public class DataStructurUtility<T> {
 		    	return index;
 		    }
 		    
-		
 		    
-
+		    /**
+		     *purpose : this function is used to checked  list is empty or not  
+		     *
+		     */
+		    public void isEmpty() {
+		    	if(head==null) {
+		    		System.out.println("List is Empty : ");
+		    	}else {
+		    	    System.out.println("List is not empty");
+		    	}
+		    		
+		    }
+		    
+		    public int getListSize() {
+		    	return size;
+		    }
+		    /**
+		     * purpose : this function used to sort element in the list 
+		     */
+		    public void sortList() {
+		    	Node current;
+		    	current=head;
+		    	Node index=current;
+		    	T temp;
+		    	if(head==null) {
+		    		isEmpty();
+		    		}else {
+		    	while(current!=null) {
+		    		index=current.next;
+		    		while(index!=null) {
+		    			if(current.data.hashCode()>index.data.hashCode()) {
+		    			   temp=current.data;
+		    			   current.data=index.data;
+		    			   index.data=temp;
+		    			}
+		    			index=index.next;
+		    		}
+		    		current=current.next;
+		    		
+		    	}
+		      }
+		    }
+		    
+		  /**
+		   * purpose : this fuction is uesd to search element in file  
+		   * 
+		 * @param data : data of list
+		 * @return : true or false regarding value
+		 */
+		public boolean searchBoolean(T data) {
+			  Node temp;
+			  temp=head;
+			  
+			  while(temp!=null) {
+				  if(temp.data.hashCode()==data.hashCode()) {
+					  return true;
+				  }
+				  temp=temp.next;
+			  }
+			  
+			  return false;
+		  }
+		
+		
+		/*
+		 *
+		 * Stak programs logic
+		 *  
+		 * */
+		  
+		
+		
+		/**
+		 * purpose : this function is used to check list is empty or not
+		 */
+		public void isEmptySatck() {
+			if(top==null) {
+				System.out.println("List is empty : ");
+			}else {
+				System.out.println("List is not empty : ");
+			}
+		}
+		
+		/**
+		 *purpose : this function is used to print the stack value
+		 * 
+		 */
+		public void printSack() {
+			   
+			   if(top==null) {
+				   isEmpty();
+			   }else {
+				   Node temp=top;
+				   while(temp!=null) {
+					   System.out.print(temp.data+" ");
+					   temp=temp.next;
+				   }
+			   }
+		   }
+		
+		  /**
+		   * purpose : this function is used for add element in stack
+		   * 
+		   * @param data : element of added 
+		   */
+		public void push(T data) {
+			  Node newTop=new Node();
+			  newTop.data=data;
+			  if(top==null) {
+				  top=newTop;
+			  }else {
+				  newTop.next=top;
+				  top=newTop;
+			  }
+			  size++;
+			  
+		  }
+		
+		/**
+		 * purpose : Delete satck element in the list 
+		 */
+		public void pop() {
+			top=top.next;
+			if(size>=0) {
+			size--;
+			}else {
+				System.out.println("here not elements : ");
+			}
+		}
+		
+		public T peek() {
+			return top.data;
+		}
+		
+		
+		/*
+		 *
+		 * Queue programs logic
+		 *  
+		 * */
+		
+		/**
+		 * purpose : this function used to add element in queue
+		 * 
+		 * @param data : data add to list
+		 */
+		public void enqueue(T data) {
+			Node newNode = new Node();
+			newNode.data=data;
+			if(front==null) {
+				front=newNode;
+				rear=newNode;
+			}else {
+				while(rear.next!=null) {
+					rear=rear.next;
+				}
+				rear.next=newNode;
+			}
+			size++;
+		}
+		
+		/**
+		 * purpose : this function used to display the queue element in list
+		 */
+		public void printQueue() {
+			if(front==null) {
+				isEmpty();
+			}else {
+				rear=front;
+				while(rear!=null) {
+					System.out.println(rear.data);
+					rear=rear.next;
+						
+				}
+			}
+		}
+		
+		/**
+		 * purpose : this function used to delete the element in list
+		 */
+		public void dequeue() {
+			if(front==null) {
+				isEmpty();
+			}else {
+				front=front.next;
+				
+			}
+			size--;
+		}
+		/**
+		 * purpose : this function used for return the front element of queue
+		 * 
+		 * @return : return front element 
+		 */
+		public T peekQueue() {
+			return front.data;
+		}
 }

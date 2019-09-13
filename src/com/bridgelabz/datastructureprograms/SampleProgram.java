@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose : sample linked list programs
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   12-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.datastructureprograms;
 
 import com.bridgelabz.util.DataStructurUtility;

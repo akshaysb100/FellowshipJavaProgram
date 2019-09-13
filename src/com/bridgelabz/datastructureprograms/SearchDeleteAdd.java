@@ -27,22 +27,25 @@ try {
 	            	s=s+(char) character;
 	            }
 	            
-	            String[] searchString = s.split(",");
+	            String[] searchString = s.split(" ");
 	           
 	            for(int index=0;index<searchString.length;index++) {
 	            	   util.addList(searchString[index]);
 	            }
 	            System.out.println("List element of  file : ");
+	           
 	            util.viewList();
 	            
 	            System.out.println();
 	            System.out.println("if string is not found than add string else if string is found than delete string : ");
+	            System.out.println("Enter the string : ");
 	            String string=util.scanString();
 	            util.searchData(string);
 	            util.viewList();
 	            
 	            System.out.println();
 	            System.out.println("if string is found than delete string else if string in not found than add string : ");
+	            System.out.println("Enter the string : ");
 	            String String1=util.scanString();
 	            util.searchData(String1);
 	            util.viewList();
@@ -51,7 +54,7 @@ try {
 	            System.out.println("Element is write in file : ");
 	            util.viewList();
 	            util.addFile();
-	            
+	        //    util.search(1); error is occuring in compile time because of generic is used
 	            reader.close();
 	          
 		}catch (Exception e) {
