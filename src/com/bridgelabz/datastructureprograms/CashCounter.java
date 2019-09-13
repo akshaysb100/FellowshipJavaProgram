@@ -31,37 +31,42 @@ public class CashCounter {
         for(int index=1;index<=size;index++) {
         	 System.out.println("this people front of cash counter");
         	 list.printQueue();
-        	 boolean flag=true;
+        	 boolean flag;
+        	 int amount;
         do{
         	 flag=true;
         	 System.out.println("\nHi "+list.peekQueue());
         	System.out.println("Enter your choice \n1.cash deposit\n2.cash withdraw\n3.exit");
         	choice=list.scanInt();
-        	
-        	System.out.println(list.peekQueue()+" Enter how much amount you deposit or withdraw : ");
-            int amount=list.scanInt();
+  
         	switch(choice) {
         	case 1:
+        		System.out.println(list.peekQueue()+" Enter how much amount you deposit : ");
+        			amount = list.scanInt();
         		   sartingAmount=sartingAmount+amount;
         		   break;
         	case 2: 
+        		System.out.println(list.peekQueue()+" Enter how much amount you withdraw : ");
+        		amount = list.scanInt();
         		   sartingAmount=sartingAmount-amount;
         		   break;
         	case 3:
         		   flag=false;
+        		   list.dequeue();
+        		 
         		   break;
             default :
         	        System.out.println("wrong choice enter : ");
-        	        list.dequeue();
-        	       break;
+        	        
+        	       
         	}
         	System.out.println("bank amount is : "+sartingAmount);
-            list.printQueue();
+            
             System.out.println();
-        }while(flag);
+        }while(choice!=3);
         	
         System.out.println("bank amount is : "+sartingAmount);
-        list.dequeue();
+      
         list.printQueue();
         System.out.println();
         

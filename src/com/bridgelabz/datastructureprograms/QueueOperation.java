@@ -14,7 +14,9 @@ public class QueueOperation {
 		System.out.println("print queue elements : ");
 		list.printQueue();
 		list.dequeue();
+		list.printQueue();
 		list.dequeue();
+		list.printQueue();
 		System.out.println();
 		System.out.println("After deleting elements list is :");
         list.printQueue();
