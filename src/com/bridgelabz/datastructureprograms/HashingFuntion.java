@@ -1,9 +1,13 @@
+/******************************************************************************
+ *  Purpose : hashing function program
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   14-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.datastructureprograms;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 
-import com.bridgelabz.util.AlgorithmUtility;
 import com.bridgelabz.util.DataStructurUtility;
 public class HashingFuntion {
 
@@ -14,8 +18,17 @@ public class HashingFuntion {
 		int value = list.scanInt();
 		DataStructurUtility<Integer> [] list1 = new DataStructurUtility[value];
 		
-		for (int i=0;i<value;i++)
-			list1[i] = new DataStructurUtility<Integer>();
+		
+		for(int index=0;index<value;index++) {
+			list.addRear(index);
+		}
+		
+		list.printHash();
+		System.out.println();
+
+		
+		for (int index=0;index<value;index++)
+			list1[index] = new DataStructurUtility<Integer>();
 		
 		     System.out.println("\nhow much number you enter in linked list : ");
 	         int listNumber=list.scanInt();

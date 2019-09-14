@@ -27,6 +27,7 @@ public class CashCounter {
         for(int index=1;index<=people;index++) {
         	list.enqueue(list.scanString());
         }
+        
         int size = list.getListSize();
         for(int index=1;index<=size;index++) {
         	 System.out.println("this people front of cash counter");

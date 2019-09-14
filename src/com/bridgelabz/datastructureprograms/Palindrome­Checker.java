@@ -42,8 +42,7 @@ public class Palindrome­Checker {
 			}
 			if(size>=1) {
 			list.removeRear();
-			}
-			
+			}	
 		}
 		
 		if(count==length){

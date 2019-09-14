@@ -381,7 +381,26 @@ public class Utility {
 		return elapsetime;
 	}
 
-	
+	/**
+	 * purpose : This function find out day of week
+	 * 
+	 * @param  day    day of month
+	 * @param  month  month of year
+	 * @param  year   which one year
+	 * @return day1  day of week 
+	 */
+	public static int dayOfWeek(int day, int month, int year) {
+		
+		  int day1,month1,year1;
+		  int year3;//find leap year or not
+		  year1=year-(14-month)/12;
+		  year3=year1+year1/4-year1/100+year1/400;
+		  month1=month+12*((14-month)/12)-2;
+		  day1=(day+year3+(31*month1)/12)%7;
+		
+		  return day1;
+	}
+
 
 
 	
