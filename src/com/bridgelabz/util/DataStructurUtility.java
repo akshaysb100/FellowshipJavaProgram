@@ -112,9 +112,9 @@ public class DataStructurUtility<T> {
 		  * 
 		  * @param string : string element
 		 */
-		public void addList(T string) {
+		public void addList(T data) {
 		    	Node newNode=new Node();
-		    	newNode.data=string;
+		    	newNode.data=data;
 		    	
 		    	if(head==null) {
 		    		head=newNode;
@@ -585,4 +585,128 @@ public class DataStructurUtility<T> {
 		public T peekQueue() {
 			return front.data;
 		}
+		
+		/**
+		 * purpose : this fuction used to add element int last(front) of queue
+		 * @param data : added elements
+		 */
+		public void addRear(T data) {
+			Node newNode = new Node();
+			newNode.data=data;
+				
+			if(front==null) {
+			   front=newNode;
+			   rear=newNode;
+			} else {
+				
+				while(rear.next!=null) {
+					rear=rear.next;
+				}
+				rear.next=newNode;
+				rear=newNode;
+			}
+			size++;
+		}
+		
+		/**
+		 * purpose : 
+		 */
+		public void printDeque() {
+		    
+			if(front==null || rear==null) {
+				isEmpty();
+			}else {
+				Node temp=front; 
+				while(temp!=null) {
+					System.out.println(temp.data);
+					temp=temp.next;
+				}
+			}
+			
+		}
+		
+		
+		/**
+		 * purpose : this fuction used to add element int frist(rear) of queue
+		 * @param data : added elements
+		 */
+		public void addFront(T data) {
+			Node newNode = new Node();
+			newNode.data=data;
+			if(front==null) {
+				front=newNode;
+				rear=newNode;
+			}else {
+				newNode.next=front;
+				front=newNode;
+				
+			}
+			size++;
+		}
+		
+		/**
+		 * purpose : this function return rear value of queue 
+		 * @return : return rear
+		 */
+		public T peekRear() {
+			return rear.data;
+		}
+		
+		
+		/**
+		 * purpose : this function return front value of queue 
+		 * @return : return front
+		 */
+		public T peekFront() {
+			return front.data;
+		}
+		
+		/**
+		 * purpose : this function is used to remove the element in front side
+		 * 
+		 */
+		public void removeFront() {
+			if(front==null) {
+				isEmpty();
+			}else {
+				front=front.next;
+			}
+			size--;
+		}
+		
+		/**
+		 * purpose : this function is used to remove the element in rear side(last)
+		 * 
+		 */
+		public void removeRear() {
+			if(rear==null) {
+				isEmpty();
+			}else {
+				Node temp=front;
+				while(temp.next!=rear) {
+				     temp=temp.next;	
+				}
+				temp.next=null;
+				rear=temp;
+			}
+			size--;
+		}
+		
+		/**
+		 * purpose : this function used to display the hash element in list
+		 */
+		public void printHash() {    
+				if(front==null || rear==null) {
+					isEmpty();
+				}else {
+					Node temp=front; 
+					while(temp!=null) {
+						System.out.print(temp.data+" ");
+						temp=temp.next;
+					}
+				}
+				
+			}
+			
+		
 }

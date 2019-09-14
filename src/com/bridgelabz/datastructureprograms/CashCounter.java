@@ -16,8 +16,8 @@ public class CashCounter {
 		DataStructurUtility<String> list = new DataStructurUtility<String>();
 		
 		System.out.println("Enter amount in bank : ");
-        int sartingAmount=list.scanInt();
-        System.out.println("Initial amount of bank is : "+sartingAmount);
+        int startingAmount=list.scanInt();
+        System.out.println("Initial amount of bank is : "+startingAmount);
         int choice;
        
         //boolean flag=true;
@@ -35,6 +35,7 @@ public class CashCounter {
         	 int amount;
         do{
         	 flag=true;
+        	 System.out.println("bank amount is : "+startingAmount);
         	 System.out.println("\nHi "+list.peekQueue());
         	System.out.println("Enter your choice \n1.cash deposit\n2.cash withdraw\n3.exit");
         	choice=list.scanInt();
@@ -43,12 +44,12 @@ public class CashCounter {
         	case 1:
         		System.out.println(list.peekQueue()+" Enter how much amount you deposit : ");
         			amount = list.scanInt();
-        		   sartingAmount=sartingAmount+amount;
+        			startingAmount=startingAmount+amount;
         		   break;
         	case 2: 
         		System.out.println(list.peekQueue()+" Enter how much amount you withdraw : ");
         		amount = list.scanInt();
-        		   sartingAmount=sartingAmount-amount;
+        		startingAmount=startingAmount-amount;
         		   break;
         	case 3:
         		   flag=false;
@@ -60,12 +61,12 @@ public class CashCounter {
         	        
         	       
         	}
-        	System.out.println("bank amount is : "+sartingAmount);
+        	
             
             System.out.println();
-        }while(choice!=3);
+        }while(flag);
         	
-        System.out.println("bank amount is : "+sartingAmount);
+        System.out.println("bank amount is : "+startingAmount);
       
         list.printQueue();
         System.out.println();
