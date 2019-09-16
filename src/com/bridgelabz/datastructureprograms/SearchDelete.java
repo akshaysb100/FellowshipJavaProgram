@@ -27,7 +27,7 @@ public class SearchDelete {
 	            	split=split+(char) character;
 	            }
 	            
-	            String[] searchString = split.split(",");
+	            String[] searchString = split.split(" ");
 	           
 	            for(int index=0;index<searchString.length;index++) {
 	            	   list.addList(searchString[index]);

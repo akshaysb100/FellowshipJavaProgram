@@ -17,14 +17,15 @@ public class StackOperations {
 		DataStructurUtility<String> list1 =new  DataStructurUtility<String>();
 		
 		// for Integer value
-		list.push(3);
+		
+		
 		list.push(1);
 		list.push(4);
 		list.push(5);
 		list.push(8);
 		System.out.println("Stack element in list : ");
 		list.printSack();
-		System.out.println("\n"+list.peek()+" is Top element in list ");
+		System.out.println("\n"+list.peekSatck()+" is Top element in list ");
 		System.out.println("size of list is "+list.getListSize());
 		list.pop();
 		list.pop();
@@ -32,9 +33,10 @@ public class StackOperations {
 		list.printSack();
 		System.out.println();
 		list.isEmptySatck();
-		System.out.println(list.peek()+" is Top element in list ");
+		System.out.println(list.peekSatck()+" is Top element in list ");
 		System.out.println("size of list is "+list.getListSize());
 
+		
 		//for String value
 		
 		list1.push("ak");
@@ -44,16 +46,17 @@ public class StackOperations {
 		list1.push("bs");
 		System.out.println("Stack element in list : ");
 		list1.printSack();
-		System.out.println("\n"+list1.peek()+" is Top element in list ");
+		System.out.println("\n"+list1.peekSatck()+" is Top element in list ");
 		System.out.println("size of list is "+list1.getListSize());
 		list1.pop();
 		list1.pop();
 		System.out.println("Delete element in list : ");
 		list1.printSack();
 		System.out.println();
-		System.out.println(list1.peek()+" is Top element in list ");
+		System.out.println(list1.peekSatck()+" is Top element in list ");
 		System.out.println("size of list is "+list1.getListSize());
 		list1.isEmptySatck();
+		
 	}
 
 }

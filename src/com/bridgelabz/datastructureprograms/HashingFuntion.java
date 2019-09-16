@@ -12,13 +12,12 @@ import com.bridgelabz.util.DataStructurUtility;
 public class HashingFuntion {
 
 	public static void main(String[] args) {
-		DataStructurUtility<Integer> list = new DataStructurUtility<Integer>();
+		DataStructurUtility<Integer> list = new DataStructurUtility<Integer>();	
 		
 		System.out.println("Enter value : ");
 		int value = list.scanInt();
 		DataStructurUtility<Integer> [] list1 = new DataStructurUtility[value];
-		
-		
+	
 		for(int index=0;index<value;index++) {
 			list.addRear(index);
 		}
@@ -34,14 +33,18 @@ public class HashingFuntion {
 	         int listNumber=list.scanInt();
 		
 		 while(listNumber>0) {
-        	 System.out.println("Enter number : ");
+        	 System.out.println("\nEnter number : ");
         	 int addList = list.scanInt();
         	 int reminder = addList%value;
         	 
         	 list1[reminder].addRear(addList);
+        	 System.out.println();
+        	 System.out.print("list of "+reminder+" elements : ");
+        	 list1[reminder].printHash();
         	 listNumber--;
          }
 		
+		 System.out.println();
 		for(int index=0;index<value;index++) {
 			System.out.print("list of "+index+" elements : ");
 			list1[index].printHash();

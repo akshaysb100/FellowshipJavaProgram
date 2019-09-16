@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose:  Calendar in 2D array
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   10-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.arrayprogram;
 
 import com.bridgelabz.util.Utility;
@@ -21,14 +29,12 @@ public class Calendar2DArray {
 			days1[0][month]=29;
 		}
 		
-		if(month==2 && Utility.leapYear(year)) {
-			days1[0][month]=29;
-		}
+		
 		 
         int d=Utility.dayOfWeek(1, month, year);
         System.out.println("day :"+d);
         System.out.println("");
-        System.out.println(" "+months1[0][month]+" "+year);
+        System.out.println("   "+months1[0][month]+" "+year);
         
         System.out.println("s  m  tu  w  th f  s");
         

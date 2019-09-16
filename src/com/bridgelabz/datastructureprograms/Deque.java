@@ -13,7 +13,7 @@ public class Deque {
 
 	public static void main(String[] args) {
 		DataStructurUtility<Integer> list = new DataStructurUtility<Integer>();
-		
+ 
 		list.addRear(5);
 		list.addRear(6);
 		list.addRear(7);
@@ -46,7 +46,8 @@ public class Deque {
 		System.out.println("front is : "+list.peekFront());
         System.out.println("rear is : "+list.peekRear());
         System.out.println(list.getListSize());
-
+       	
+	
 	}
 
 }

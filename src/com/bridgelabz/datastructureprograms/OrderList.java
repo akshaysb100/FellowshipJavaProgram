@@ -40,10 +40,12 @@ public class OrderList {
            list.printList();
            
            System.out.println("\nsort list order wise : ");
+           list.sortList();
+           list.printList();
            list.addLast(5);
            
            boolean value;
-           System.out.println("Enter the element which one you found in the list : ");
+           System.out.println("\nEnter the element which one you found in the list : ");
            int foundNumber=list.scanInt();
            value= list.searchBoolean(foundNumber);
            if(value==true)

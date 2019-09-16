@@ -518,7 +518,7 @@ public class DataStructurUtility<T> {
 			}
 		}
 		
-		public T peek() {
+		public T peekSatck() {
 			return top.data;
 		}
 		
@@ -609,7 +609,8 @@ public class DataStructurUtility<T> {
 		}
 		
 		/**
-		 * purpose : 
+		 * purpose : this function is used for print the deque value
+		 * 
 		 */
 		public void printDeque() {
 		    
@@ -628,6 +629,7 @@ public class DataStructurUtility<T> {
 		
 		/**
 		 * purpose : this fuction used to add element int frist(rear) of queue
+		 * 
 		 * @param data : added elements
 		 */
 		public void addFront(T data) {
@@ -681,13 +683,20 @@ public class DataStructurUtility<T> {
 		public void removeRear() {
 			if(rear==null) {
 				isEmpty();
-			}else {
+			}
+			else if(front==rear)
+			{
+				front = rear = null;
+			}
+			else {
 				Node temp=front;
 				while(temp.next!=rear) {
 				     temp=temp.next;	
 				}
-				temp.next=null;
-				rear=temp;
+//				temp.next=null;
+//				rear=temp;
+				temp.next = null;
+				rear = temp;
 			}
 			size--;
 		}

@@ -32,11 +32,13 @@ public class BalancedParentheses {
 			     list.push(arithExpressions[index]);
 			     size++;
 	     	}
-		    else if(arithExpressions[index].equals("1")){
-		    	if(size>=1)
+		   else if(arithExpressions[index].equals(")")){
+		    	if(size>=1) {
 		    	list.pop();
+		    	}
 		    	size--;
-		    }
+		    	
+		  }
      
 		}
         System.out.println();
