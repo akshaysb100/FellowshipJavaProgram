@@ -15,7 +15,14 @@ public class BubbleSortInteger {
 	public static void main(String[] args) {
 		
 	       System.out.println("bubble sort program : ");
-	       int[] bubbleSortArray = {10,20,11,15,13,18,16};
+	       
+	       System.out.println("Enter length of array : ");
+	       int length = AlgorithmUtility.scanInt();
+	       int[] bubbleSortArray = new int[length];
+	       System.out.println("Enter Elements in array : ");
+	       for(int index=0;index<length;index++) {
+	    	   bubbleSortArray[index] = AlgorithmUtility.scanInt();
+	       }
 	       AlgorithmUtility.bubbleSortIntegerValue(bubbleSortArray);
 	       for(int index=0;index<bubbleSortArray.length;index++) {
 	    	   System.out.print(bubbleSortArray[index]+" ");

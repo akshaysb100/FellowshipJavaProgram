@@ -8,6 +8,7 @@
  ******************************************************************************/
 package com.bridgelabz.util;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AlgorithmUtility {
@@ -59,7 +60,7 @@ public class AlgorithmUtility {
 		{
 		for(int j=0;j<l;j++)
 			{
-				if(string1.charAt(i)==string2.charAt(j))
+				if(string1.charAt(i)==string2.charAt(j) && i!=j)
 				{
 					count++;
 					//System.out.println(count);
@@ -389,7 +390,35 @@ public class AlgorithmUtility {
 	    }  
 	    return decimal;  
 	}  
-	
-	
+    
+	/**
+	 * purpose : this function is used to check numbers are anagram or not 
+	 * 
+	 * @param number1 : anagram number first
+	 * @param number2 : anagram number second
+	 * 
+	 * @return return true or false
+	 */
+	public static boolean isAnagram(int number1,int number2) {
+		String str1,str2;
+		str1 = String.valueOf(number1);
+		str2 = String.valueOf(number2);
+		
+		char[] ch1 = str1.toCharArray();
+		char[] ch2 = str2.toCharArray();
+		
+		Arrays.sort(ch1);
+		Arrays.sort(ch2);
+		
+		int length1 = ch1.length;
+		int length2 = ch2.length;
+		
+		if(length1 == length2) {
+			if(Arrays.equals(ch1, ch2)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }

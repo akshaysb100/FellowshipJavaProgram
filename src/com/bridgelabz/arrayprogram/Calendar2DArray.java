@@ -14,7 +14,7 @@ public class Calendar2DArray {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Enetr month : ");
+		System.out.println("Enter month : ");
         int month=Utility.scanInt();
         System.out.println("Enetr year : ");
         int year=Utility.scanInt();

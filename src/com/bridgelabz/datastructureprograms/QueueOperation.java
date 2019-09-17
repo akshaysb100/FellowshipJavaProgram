@@ -11,14 +11,19 @@ public class QueueOperation {
 		list.enqueue(5);
 		list.enqueue(6);
 		list.enqueue(4);
+		list.enqueue(3);
 		System.out.println("print queue elements : ");
 		list.printQueue();
+	  
 		list.dequeue();
+		System.out.println("after deleting queue : ");
 		list.printQueue();
+		System.out.println("after deleting queue : ");
 		list.dequeue();
 		list.printQueue();
 		System.out.println();
 		System.out.println("After deleting elements list is :");
+        list.dequeue();
         list.printQueue();
 	}
 

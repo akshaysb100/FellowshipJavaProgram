@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose:  check Anagram or not in 2D array
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   10-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.arrayprogram;
 
 public class PrimeNumber2DArray {

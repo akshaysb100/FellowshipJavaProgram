@@ -541,10 +541,12 @@ public class DataStructurUtility<T> {
 				front=newNode;
 				rear=newNode;
 			}else {
+		
 				while(rear.next!=null) {
 					rear=rear.next;
 				}
 				rear.next=newNode;
+				rear=newNode;
 			}
 			size++;
 		}
@@ -563,6 +565,7 @@ public class DataStructurUtility<T> {
 						
 				}
 			}
+			size++;
 		}
 		
 		/**
@@ -641,7 +644,6 @@ public class DataStructurUtility<T> {
 			}else {
 				newNode.next=front;
 				front=newNode;
-				
 			}
 			size++;
 		}

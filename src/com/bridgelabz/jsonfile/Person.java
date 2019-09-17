@@ -2,23 +2,23 @@ package com.bridgelabz.jsonfile;
 
 public class Person {
 
-	private int mobileNumber;
+	private String mobileNumber;
 	private int age;
 	private String city;
 	private Employee employee;
-	
-	public Person(int mobileNumber,int age,String city,Employee employee) {
+	public Person() {}
+	public Person(String mobileNumber,int age,String city,Employee employee) {
 		this.age=age;
 		this.city=city;
 		this.employee=employee;
 		this.mobileNumber=mobileNumber;
 	}
 
-	public int getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
 
-	public void setMobileNumber(int mobileNumber) {
+	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 

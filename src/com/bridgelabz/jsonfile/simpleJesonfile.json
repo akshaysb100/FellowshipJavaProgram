@@ -1,10 +1,10 @@
 {
-  "mobileNumber" : 73500,
+  "mobileNumber" : "8605555260",
   "age" : 21,
   "city" : "pune",
   "employee" : {
     "empNo" : 1,
-    "name" : "Akshay",
-    "salary" : 400000.0
+    "name" : "Aniket",
+    "salary" : 500000.0
   }
 }

@@ -14,11 +14,11 @@ public class VendingMachine {
 	public static void main(String[] args) {
 		System.out.println("Enter how much Amount you withdraw : ");
         int amount = AlgorithmUtility.scanInt();
-        int note1000=0,note500=0,note100=0,note50=0,note20=0,note10=0,note1=0;
+        int note2000=0,note500=0,note100=0,note50=0,note20=0,note10=0,note1=0;
         while(amount>0) {
-        	if(amount>=1000) {
-        		note1000++;
-        		amount=amount-1000;
+        	if(amount>=2000) {
+        		note2000++;
+        		amount=amount-2000;
         	}else if (amount>=500) {
 				note500++;
 				amount=amount-500;
@@ -40,7 +40,7 @@ public class VendingMachine {
 			}
         }
         
-        System.out.println("notes of 1000 : "+note1000);
+        System.out.println("notes of 2000 : "+note2000);
         System.out.println("notes of 500 : "+note500);
         System.out.println("notes of 100 : "+note100);
         System.out.println("notes of 50 : "+note50);

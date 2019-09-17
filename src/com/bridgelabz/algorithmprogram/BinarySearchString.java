@@ -41,7 +41,7 @@ public class BinarySearchString {
 		        value= AlgorithmUtility.binarySearchStringValue(array, search);
 		        if(value>=0) {
 		         for(int index=0;index<array.length;index++) {
-		      	   if(array[index]==array[value]) {
+		      	   if(array[index].equals(array[value])) {
 		      		   System.out.println(array[value]+" : element is found on "+index+" index");
 		      	   }
 		         }
