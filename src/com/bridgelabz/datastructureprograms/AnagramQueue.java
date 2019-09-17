@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose:  Anagram using Queue operations
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   10-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.datastructureprograms;
 
 import com.bridgelabz.util.AlgorithmUtility;
@@ -10,32 +18,12 @@ public class AnagramQueue {
         System.out.println("prime number : ");
 		
 		DataStructurUtility<Integer> list = new DataStructurUtility<Integer>();
-		DataStructurUtility<Integer> list1 = new DataStructurUtility<Integer>();
 		DataStructurUtility<Integer> list2 = new DataStructurUtility<Integer>();
 		DataStructurUtility<Integer> list3 = new DataStructurUtility<Integer>();
-//		int range=AlgorithmUtility.scanInt();
-//		  int array[]=new int[range];
-//		 
-//		int primeArray[]= AlgorithmUtility.rangeOfPrimeNumber(array,range);
-//	
-//		for(int i=0;i<primeArray.length;i++) {
-//			System.out.println(primeArray[i]);
-//		}
-//		System.out.println("Anagram numbers is : ");
-//		for(int index1=0;index1<primeArray.length;index1++) {
-//			for(int index3=0;index3<primeArray.length;index3++) {
-//				  
-//				if(AlgorithmUtility.isAnagram(primeArray[index1], primeArray[index3])==true && index1!=index3) {
-//					  list.enqueue(primeArray[index1]);	
-//				}
-//
-//			}
-//		
-//		}
-	
+
 		boolean flag;
 		int temp=0;
-		for(int i=2;i<20;i++) {
+		for(int i=2;i<100;i++) {
 		 	flag=true;
 		 	  temp=i;
 		 	for(int j=2;j<temp;j++) {
@@ -48,24 +36,44 @@ public class AnagramQueue {
 		 		list.enqueue(i);
 		 	}
 		}
-		
-		list.printQueue();
-		int num1,num2;
-		int size = list.getListSize();
-		for(int i=1;i<=size;i++) {
-			num1=list.peekQueue();
-			for(int j=1;j<=size;j++) {
-				num2=list.peekQueue();
-				if(num1!=num2 & i!=j) {
-					if(AlgorithmUtility.isAnagram(num1, num2) ) {
-						list3.enqueue(num1);
-					}
-				}
-			}
-			list2.enqueue(list.peekQueue());
+		int number;
+		for(int i=0;i<100;i++) {
+			number=list.peekQueue();
+			list2.enqueue(number);
+			list.enqueue(number);
 			list.dequeue();
 		}
 		
+		System.out.println(list.peekQueue());
+		System.out.println(list.peekRear());
+		
+		
+		int num1,num2;
+		int size = list.getListSize();
+		System.out.println("size : "+size);
+		for(int i=1;i<=size;i++) {
+			num1=list.peekQueue();
+			
+			for(int j=1;j<=size;j++) {
+				num2=list2.peekQueue();
+				
+				if(num1!=num2 & i!=j) {
+					boolean value=AlgorithmUtility.isAnagram(num1, num2);
+			
+					if(value==true ) {
+						
+						list3.enqueue(num1);
+					}
+				}
+				list2.enqueue(list2.peekQueue());
+				list2.dequeue();
+			}
+			list.enqueue(list.peekQueue());
+			list.dequeue();
+		}
+		
+ 	System.out.println("Anagram String is : ");	
+	list3.printQueue();
 
 	}
 

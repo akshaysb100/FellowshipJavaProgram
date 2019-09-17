@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose:  Queue Operations
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   10-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.datastructureprograms;
 
 import com.bridgelabz.util.DataStructurUtility;
@@ -12,10 +20,12 @@ public class QueueOperation {
 		list.enqueue(6);
 		list.enqueue(4);
 		list.enqueue(3);
+		
 		System.out.println("print queue elements : ");
 		list.printQueue();
 	  
 		list.dequeue();
+		list.enqueue(18);
 		System.out.println("after deleting queue : ");
 		list.printQueue();
 		System.out.println("after deleting queue : ");
@@ -24,6 +34,11 @@ public class QueueOperation {
 		System.out.println();
 		System.out.println("After deleting elements list is :");
         list.dequeue();
+        
+      //  
+        list.printQueue();
+        list.enqueue(12);
+        System.out.println("After adding elements : ");
         list.printQueue();
 	}
 

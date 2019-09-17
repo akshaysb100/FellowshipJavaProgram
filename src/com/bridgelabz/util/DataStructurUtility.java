@@ -538,17 +538,15 @@ public class DataStructurUtility<T> {
 			Node newNode = new Node();
 			newNode.data=data;
 			if(front==null) {
-				front=newNode;
-				rear=newNode;
+				front=rear=newNode;
+				size++;
 			}else {
-		
-				while(rear.next!=null) {
-					rear=rear.next;
-				}
+				
 				rear.next=newNode;
-				rear=newNode;
+				rear=rear.next;
+				size++;
 			}
-			size++;
+			
 		}
 		
 		/**
@@ -558,14 +556,13 @@ public class DataStructurUtility<T> {
 			if(front==null) {
 				isEmpty();
 			}else {
-				rear=front;
-				while(rear!=null) {
-					System.out.println(rear.data);
-					rear=rear.next;
+				Node temp =front;
+				while(temp!=null) {
+					System.out.println(temp.data);
+					temp=temp.next;
 						
 				}
 			}
-			size++;
 		}
 		
 		/**
@@ -576,9 +573,9 @@ public class DataStructurUtility<T> {
 				isEmpty();
 			}else {
 				front=front.next;
-				
+				size--;
 			}
-			size--;
+			
 		}
 		/**
 		 * purpose : this function used for return the front element of queue
