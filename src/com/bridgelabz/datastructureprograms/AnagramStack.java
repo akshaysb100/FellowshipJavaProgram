@@ -27,7 +27,7 @@ public class AnagramStack {
 		for(int i=0;i<primeArray.length;i++) {
 			System.out.println(primeArray[i]);
 		}
-		System.out.println("Anagram numbers is : ");
+		System.out.println("Anagram numbers are : ");
 		for(int index1=0;index1<primeArray.length;index1++) {
 			for(int index3=0;index3<primeArray.length;index3++) {
 				  

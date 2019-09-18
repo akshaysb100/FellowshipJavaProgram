@@ -29,7 +29,9 @@ public class Calendar2DArray {
 			days1[0][month]=29;
 		}
 		
-		
+		for(int i=0;i<10;i++) {
+			
+		}
 		 
         int d=Utility.dayOfWeek(1, month, year);
         System.out.println("day :"+d);

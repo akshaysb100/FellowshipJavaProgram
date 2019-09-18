@@ -15,15 +15,15 @@ public class AnagramQueue {
 
 	public static void main(String[] args) {
 
-        System.out.println("prime number : ");
+        System.out.println("prime numbers : ");
 		
 		DataStructurUtility<Integer> list = new DataStructurUtility<Integer>();
 		DataStructurUtility<Integer> list2 = new DataStructurUtility<Integer>();
-		DataStructurUtility<Integer> list3 = new DataStructurUtility<Integer>();
+		
 
 		boolean flag;
 		int temp=0;
-		for(int i=2;i<100;i++) {
+		for(int i=2;i<200;i++) {
 		 	flag=true;
 		 	  temp=i;
 		 	for(int j=2;j<temp;j++) {
@@ -35,13 +35,6 @@ public class AnagramQueue {
 		 	if(flag==true) {
 		 		list.enqueue(i);
 		 	}
-		}
-		int number;
-		for(int i=0;i<100;i++) {
-			number=list.peekQueue();
-			list2.enqueue(number);
-			list.enqueue(number);
-			list.dequeue();
 		}
 		
 		System.out.println(list.peekQueue());
@@ -55,25 +48,25 @@ public class AnagramQueue {
 			num1=list.peekQueue();
 			
 			for(int j=1;j<=size;j++) {
-				num2=list2.peekQueue();
+				num2=list.peekQueue();
 				
 				if(num1!=num2 & i!=j) {
 					boolean value=AlgorithmUtility.isAnagram(num1, num2);
 			
 					if(value==true ) {
 						
-						list3.enqueue(num1);
+						list2.enqueue(num1);
 					}
 				}
-				list2.enqueue(list2.peekQueue());
-				list2.dequeue();
+				list.enqueue(list.peekQueue());
+				list.dequeue();
 			}
 			list.enqueue(list.peekQueue());
 			list.dequeue();
 		}
 		
- 	System.out.println("Anagram String is : ");	
-	list3.printQueue();
+ 	System.out.println("Anagram Strings are : ");	
+	list2.printQueue();
 
 	}
 
