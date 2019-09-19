@@ -1,0 +1,14 @@
+[{"rice":
+[{"name":"basmati","weight":40,"price":23},
+{"name":"kolam","weight":59,"price":300},
+{"name":"ratnagiri","weight":12,"price":30}]},
+
+{"pulses":
+[{"name":"beans","weight":30,"price":12},
+{"name":"ragi","weight":20,"price":12},
+{"name":"lentils","weight":45,"price":76},
+{"name":"dal","weight":23,"price":65}]},
+
+{"wheat":
+[{"name":"red wheat","weight":20,"price":15},
+{"name":"black","weight":14,"price":50}]}]

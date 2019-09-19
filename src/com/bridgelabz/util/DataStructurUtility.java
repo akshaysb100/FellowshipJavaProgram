@@ -37,10 +37,10 @@ public class DataStructurUtility<T> {
 	    
 	    public int scanInt() {
 	    	
-	    	
 	      int value = scanner.nextInt();
-		return value;
-		}
+		  return value;
+		
+	    }
 
 	    /**
 	     * purpose : create function to Accepstringt the String values from user
@@ -193,8 +193,10 @@ public class DataStructurUtility<T> {
 		    public void deleteAtPosition(int position) {
 		    	if(position==1) {
 		    		deleteFirst();
+		    	
 		    	}else if(position==size) {
 		    		deleteLast();
+		    		
 		    	}else if(position>1 && position<=size-1){
 		    		Node temp,temp1;
 		    		temp=head;
@@ -203,11 +205,11 @@ public class DataStructurUtility<T> {
 		    		}
 		    		temp1=temp.next;
 		    		temp.next=temp1.next;
-		    		
+		    		size--;
 		    	}else {
 		    		System.out.println("position is not found : ");
 		    	}
-		    	size--;
+		    	
 		    }
 		    
 		    
@@ -303,8 +305,10 @@ public class DataStructurUtility<T> {
 			
 				if(postion==1) {
 					addFirst1(data);
+					
 				}else if (postion==size+1) {
 					addLast(data);
+					
 				}else if(postion>1 && postion<=size){
 					Node newNode = new Node();
 					newNode.data=data;
@@ -315,10 +319,11 @@ public class DataStructurUtility<T> {
 					}
 					newNode.next=temp.next;
 					temp.next=newNode;
+					size++;
 				}else {
 					System.out.println("index number is wrong you insert index number between 1 to "+(size+1)+" only");
 				}
-				size++;
+				
 			}
 		
 		

@@ -1,10 +1,20 @@
+[ 
 {
-  "mobileNumber" : "8605555260",
+  "mobileNumber" : "3213213",
   "age" : 21,
   "city" : "pune",
   "employee" : {
     "empNo" : 1,
-    "name" : "Aniket",
-    "salary" : 500000.0
+    "name" : "akshay",
+    "salary" : 200000.0
   }
-}
+}, {
+  "mobileNumber" : "323213213",
+  "age" : 22,
+  "city" : "pune",
+  "employee" : {
+    "empNo" : 2,
+    "name" : "aksh",
+    "salary" : 2323234.0
+  }
+} ]

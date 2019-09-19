@@ -28,9 +28,10 @@ public class HashingFuntion {
 			list1[i].printHash();
 		}
 	
+		
 		System.out.println();
 
-		    System.out.println("\nhow much number you enter in linked list : ");
+		    System.out.println("\nhow much numbers you enter in linked list : ");
 	         int listNumber=list.scanInt();
 		
 		 while(listNumber>0) {
@@ -40,8 +41,14 @@ public class HashingFuntion {
         	 
         	 list1[reminder].addRear(addList);
         	 System.out.println();
-        	 System.out.print("list of "+reminder+" elements : ");
-        	 list1[reminder].printHash();
+        	// System.out.print("list of "+reminder+" elements : ");
+        	 System.out.println();
+        	 for(int index=0;index<value;index++) {
+        		 System.out.print("list of "+index+" elements : ");
+        		 list1[index].printHash();
+        		 System.out.println();
+        	 }
+        	 
         	 listNumber--;
          }
 		
