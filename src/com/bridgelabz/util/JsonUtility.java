@@ -2,6 +2,7 @@ package com.bridgelabz.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonParseException;
@@ -10,7 +11,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectWriter;
 import org.codehaus.jackson.util.DefaultPrettyPrinter;
 
-import com.bridgelabz.jsonfile.Person;
+import com.bridgelabz.jsonprogram.Stock;
+
 public class JsonUtility {
      private static ObjectMapper mapper;
      
@@ -69,4 +71,9 @@ public class JsonUtility {
         	 return readResult;
          }
      }
+     public static <T> void prettyPrint(File file,List<Stock> stockList) throws JsonGenerationException, JsonMappingException, IOException
+ 	{
+ 		ObjectWriter writer = mapper.writerWithDefaultPrettyPrinter();
+ 		writer.writeValue((file), stockList);
+ 	}
 } 

@@ -1,7 +1,16 @@
-package com.bridgelabz.jsonfile;
+/******************************************************************************
+ *  Purpose: Rice information
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   20-09-2019
+ *
+ *******************************************************************************/
 
-public class Wheats {
+package com.bridgelabz.jsonprogram;
 
+public class Rice {
+	
 	private String name;
 	private int price;
 	private int weight;
@@ -24,4 +33,5 @@ public class Wheats {
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
+	
 }

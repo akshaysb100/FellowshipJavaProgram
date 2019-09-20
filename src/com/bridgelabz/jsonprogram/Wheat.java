@@ -1,7 +1,14 @@
-package com.bridgelabz.jsonfile;
+/******************************************************************************
+ *  Purpose: Wheats information
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   20-09-2019
+ *
+ *******************************************************************************/
+package com.bridgelabz.jsonprogram;
 
-public class Pulses {
-
+public class Wheat {
 
 	private String name;
 	private int price;

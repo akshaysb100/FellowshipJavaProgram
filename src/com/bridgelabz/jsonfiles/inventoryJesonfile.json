@@ -1,0 +1,29 @@
+{
+  "pulses" : [ {
+    "name" : "ragi",
+    "price" : 12,
+    "weight" : 30
+  }, {
+    "name" : "beans",
+    "price" : 30,
+    "weight" : 56
+  } ],
+  "wheat" : [ {
+    "name" : "red",
+    "price" : 23,
+    "weight" : 24
+  }, {
+    "name" : "black",
+    "price" : 35,
+    "weight" : 27
+  } ],
+  "rice" : [ {
+    "name" : "ratanagiti",
+    "price" : 30,
+    "weight" : 40
+  }, {
+    "name" : "kolam",
+    "price" : 23,
+    "weight" : 45
+  } ]
+}

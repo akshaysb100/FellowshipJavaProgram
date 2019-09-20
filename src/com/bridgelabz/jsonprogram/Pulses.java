@@ -1,6 +1,15 @@
-package com.bridgelabz.jsonfile;
+/******************************************************************************
+ *  Purpose: Pulses information
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   20-09-2019
+ *
+ *******************************************************************************/
+package com.bridgelabz.jsonprogram;
 
-public class InventoryDetails {
+public class Pulses {
+
 
 	private String name;
 	private int price;
@@ -24,7 +33,4 @@ public class InventoryDetails {
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
-	
-	
-
 }

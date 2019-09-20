@@ -1,0 +1,17 @@
+[ {
+  "stockName" : "TATA",
+  "numberOfShares" : 100,
+  "sharePrice" : 5000
+}, {
+  "stockName" : "MOTO",
+  "numberOfShares" : 80,
+  "sharePrice" : 4000
+}, {
+  "stockName" : "TATA",
+  "numberOfShares" : 100,
+  "sharePrice" : 5000
+}, {
+  "stockName" : "MOTO",
+  "numberOfShares" : 90,
+  "sharePrice" : 4000
+} ]
