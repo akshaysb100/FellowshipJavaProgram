@@ -15,7 +15,7 @@ public class StockAcount1 {
 
 	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
 	
-      System.out.println("Enter info  : ");
+     // System.out.println("Enter info  : ");
       TransactionModel1 transModel = new TransactionModel1();
 		
 		String pathOfTransaction = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/stockacount.json";
