@@ -10,4 +10,8 @@
   "stockName" : "SAM",
   "numberOfShares" : 70,
   "sharePrice" : 3232
-} ]
+}, {
+  "stockName" : "bridgeIT",
+  "numberOfShares" : 90,
+  "sharePrice" : 1000
+}]

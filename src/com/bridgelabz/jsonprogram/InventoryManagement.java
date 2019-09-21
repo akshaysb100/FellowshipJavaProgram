@@ -7,17 +7,7 @@
  *
  *******************************************************************************/
 package com.bridgelabz.jsonprogram;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
-import java.util.Scanner;
-
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.TypeReference;
-
 import com.bridgelabz.util.JsonUtility;
 import com.bridgelabz.util.Utility;
 
@@ -26,10 +16,11 @@ public class InventoryManagement {
 
 	public static void main(String[] args) throws IOException, IOException {
 		
-		ObjectMapper mapper = new ObjectMapper();
 		
-	    InventoryDetails listOfDetails = mapper.readValue(new File("/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/inventoryJesonfile.json"), InventoryDetails.class);
+		InventoryDetails details = new InventoryDetails();
+		String pathOfTransaction = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/inventoryJesonfile.json";
        
+        InventoryDetails listOfDetails =  (InventoryDetails) JsonUtility.readMapper(pathOfTransaction, details);
 	    System.out.println("Inventory Managements Details  : ");
 	    int total = 0 ,total1=0;
 	    boolean flag = true;
@@ -43,9 +34,12 @@ public class InventoryManagement {
 			
 			switch (choice) {
 			case 1 :
-			         total=0;
+				
+				
+				 total=0;
 				    System.out.println("Rice information : ");
-				    for(int i=0;i<2;i++) {
+				    
+				    for(int i=0;i<listOfDetails.getRice().size();i++) {
 				    	String name = listOfDetails.getRice().get(i).getName();
 				    	System.out.println("name :"+name);
 				    	int price = listOfDetails.getRice().get(i).getPrice();
@@ -59,11 +53,12 @@ public class InventoryManagement {
 				    System.out.println("TOTAL PRICE OF All RICE = "+total);
 				    total1=total1+total;
 				    System.out.println();
+
 				      break;
 			case 2:
 				total=0;
 				    System.out.println("Pulses information : ");
-				    for(int i=0;i<2;i++) {
+				    for(int i=0;i<listOfDetails.getPulses().size();i++) {
 				    	String name = listOfDetails.getPulses().get(i).getName();
 				    	System.out.println("name :"+name);
 				    	int price = listOfDetails.getPulses().get(i).getPrice();
@@ -81,7 +76,7 @@ public class InventoryManagement {
 			case 3:
 				total=0;
 				System.out.println("Wheat information : ");
-			    for(int i=0;i<2;i++) {
+			    for(int i=0;i<listOfDetails.getWheat().size();i++) {
 			    	String name = listOfDetails.getWheat().get(i).getName();
 			    	System.out.println("name :"+name);
 			    	int price = listOfDetails.getWheat().get(i).getPrice();

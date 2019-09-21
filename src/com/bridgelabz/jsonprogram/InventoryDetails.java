@@ -13,10 +13,18 @@ import java.util.List;
 
 public class InventoryDetails implements Serializable{
 
+	private String Inventory;
 	private List<Rice> rice;
 	private List<Pulses> pulses;
 	private List<Wheat> wheat;
 	
+	
+	public String getInventory() {
+		return Inventory;
+	}
+	public void setInventory(String inventory) {
+		Inventory = inventory;
+	}
 	public List<Rice> getRice() {
 		return rice;
 	}

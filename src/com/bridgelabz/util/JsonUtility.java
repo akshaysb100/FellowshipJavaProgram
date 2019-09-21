@@ -71,6 +71,20 @@ public class JsonUtility {
         	 return readResult;
          }
      }
+     
+     public static Object readMapper(String path, Object object)throws JsonParseException, JsonMappingException, IOException {
+ 		return mapper.readValue(new File(path), object.getClass());
+
+ 	}
+     public static String writeMapper(String path, Object object)
+ 			throws JsonParseException, JsonMappingException, IOException {
+ 		mapper.writeValue(new File(path), object);
+ 		return "Success writing into file";
+
+ 	}
+     
+   
+     
      public static <T> void prettyPrint(File file,List<Stock> stockList) throws JsonGenerationException, JsonMappingException, IOException
  	{
  		ObjectWriter writer = mapper.writerWithDefaultPrettyPrinter();

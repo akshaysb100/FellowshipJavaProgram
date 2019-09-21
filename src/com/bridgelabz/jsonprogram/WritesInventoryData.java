@@ -8,95 +8,125 @@
  *******************************************************************************/
 package com.bridgelabz.jsonprogram;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
+
 
 import com.bridgelabz.util.JsonUtility;
 import com.bridgelabz.util.Utility;
 
 public class WritesInventoryData {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
 			
-		JSONObject root = new JSONObject();
-	   
+	//	JSONObject root = new JSONObject();
+	  
+		InventoryDetails details = new InventoryDetails();
+		String pathOfTransaction = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/inventoryJesonfile.json";
+      
         List<Rice> listofRice = new ArrayList<Rice>(); 
-		System.out.println("how much list enter : ");
+        List<Pulses> listofpulses = new ArrayList<Pulses>();
+        List<Wheat> listofwheat = new ArrayList<Wheat>();
+        
+        File file = new File(pathOfTransaction);
+        
+        
+        System.out.println("how much list enter : ");
 		int number = Utility.scanInt();
 		
-		Rice rice1[] = new Rice[number];
-		for(int index=0;index<number;index++) {
-			rice1[index] = new Rice();
+		
+		Rice rice1 = new Rice();
+		
+			if (file.length() != 0) {
+				details = (InventoryDetails) JsonUtility.readMapper(pathOfTransaction, details);
+			}
+			
+			if(file.length() != 0) {
+				
+			if (!details.getRice().isEmpty()) {
+				listofRice.addAll(details.getRice());
+			}
+			if (!details.getRice().isEmpty()) {
+				listofpulses.addAll(details.getPulses());
+			}
+			if (!details.getRice().isEmpty()) {
+				listofwheat.addAll(details.getWheat());
+			}
+			}
 			System.out.println("Enter rice info : ");
 			System.out.println("Enter rice name : ");
 			String name = Utility.scanString();
-			rice1[index].setName(name);;
+			rice1.setName(name);
 			
 			System.out.println("Enter rice price : ");
 			int price = Utility.scanInt();
-			rice1[index].setPrice(price);;
+			rice1.setPrice(price);;
 			
 			System.out.println("Enter rice weight : ");
 			int weight = Utility.scanInt();
-			rice1[index].setWeight(weight);
+			rice1.setWeight(weight);
 			
-			listofRice.add(rice1[index]);
+			listofRice.add(rice1);
 			
 			
-		}
+		
+		
 		List<Pulses> listofPulses = new ArrayList<Pulses>(); 
-		Pulses pulses1[] = new Pulses[number];
-		for(int index=0;index<number;index++) {
-			pulses1[index] = new Pulses();
+		Pulses pulses = new Pulses();
+		
+			
 			System.out.println("Enter pulses info : ");
 			System.out.println("Enter pulses name : ");
-			String name = Utility.scanString();
-			pulses1[index].setName(name);;
+		    name =Utility.scanString();
+			pulses.setName(name);
 			
 			System.out.println("Enter pulses price : ");
-			int price = Utility.scanInt();
-			pulses1[index].setPrice(price);;
+		    price = Utility.scanInt();
+			pulses.setPrice(price);;
 			
 			System.out.println("Enter pulses weight : ");
-			int weight = Utility.scanInt();
-			pulses1[index].setWeight(weight);
+			 weight = Utility.scanInt();
+			pulses.setWeight(weight);
 			
-			listofPulses.add(pulses1[index]);
+			listofPulses.add(pulses);
 			
 			
-		}
+	
 		
 		List<Wheat> listofWheat = new ArrayList<Wheat>(); 
-		Wheat wheat[] = new Wheat[number];
+		Wheat wheat = new Wheat();
 		for(int index=0;index<number;index++) {
-			wheat[index] = new Wheat();
+			wheat= new Wheat();
 			System.out.println("Enter wheat info : ");
 			System.out.println("Enter wheat name : ");
-			String name = Utility.scanString();
-			wheat[index].setName(name);;
+			 name = Utility.scanString();
+			wheat.setName(name);
 			
 			System.out.println("Enter wheat price : ");
-			int price = Utility.scanInt();
-			wheat[index].setPrice(price);;
+			 price = Utility.scanInt();
+			wheat.setPrice(price);;
 			
 			System.out.println("Enter wheat weight : ");
-			int weight = Utility.scanInt();
-			wheat[index].setWeight(weight);
+		    weight = Utility.scanInt();
+			wheat.setWeight(weight);
 			
-			listofWheat.add(wheat[index]);
+			listofWheat.add(wheat);
 			
 			
 		}
-		root.put("wheat",listofWheat);
-		root.put("pulses",listofPulses);
-        root.put("rice", listofRice);
-        
-	    String jsonPath = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/inventoryJesonfile.json";
-		JsonUtility.WriteVlueFile(jsonPath,root);
-	
+	//	root.put("wheat",listofWheat);
+		//root.put("pulses",listofPulses);
+		
+		details.setRice(listofRice);
+		details.setPulses(listofPulses);
+		details.setWheat(listofWheat);
+		details.setInventory("list");
+		JsonUtility.writeMapper(pathOfTransaction, details);
 		System.out.println("===== Done =====");
 	}
 

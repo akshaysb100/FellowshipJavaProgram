@@ -11,18 +11,12 @@ package com.bridgelabz.jsonprogram;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-
-import com.bridgelabz.util.JsonUtility;
 import com.bridgelabz.util.Utility;
 
 public class ReadStockData1 {
@@ -32,21 +26,20 @@ public class ReadStockData1 {
 		File file = new File("/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/stockfile.json");
 		ObjectMapper mapper = new ObjectMapper();
 	//	StockDetails stockDetails = mapper.readValue(new File("/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/stockfile.json"), StockDetails.class);
-        int value;
+
 	 //  Stock stockDetails1 = mapper.readValue("/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/stockfile.json", );
 		
 
     //    String jsonPath = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/stockfile.json";
 	//	List<Stock> temp  = mapper.readValue(jsonPath, new TypeReference<List<Stock>>(){});
-        List<Stock> stockList = new ArrayList<Stock>();
-        List<Stock> stockData = new JSONArray();
+       
 		System.out.println("Company Details  : ");
-	    int total = 0 ,total1=0;
+	    int total = 0;
 	    int totalsize=0;
 	    boolean flag = true;
 	    while(flag) {
 	    	System.out.println("Enter your choice");
-			System.out.println("1. Stock");
+			System.out.println("1. ShowStock");
 			System.out.println("2. Add Stock");
 			System.out.println("3. Exit");
 			int choice = Utility.scanInt();
