@@ -3,123 +3,227 @@ package com.bridgelabz.jsonprogram.addressbook;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 
-import com.bridgelabz.jsonprogram.TransactionModel1;
 import com.bridgelabz.util.JsonUtility;
 import com.bridgelabz.util.Utility;
 
-public class AddressBookMethod {
-    
-	String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/personadd.json";
+public class AdressBooktemp {
+
+	String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/state.json";
 	
 	File file = new File(personInfo);
+  //  AddSate detail = new AddSate();
     
-	AddressBookModel details = new AddressBookModel();
-	ArrayList<Person> person = new ArrayList<Person>();
+	//AddressBookModel details = new AddressBookModel();
+	//ArrayList<Person> person = new ArrayList<Person>();
+	ArrayList<AddressBookModel> addbook = new ArrayList<AddressBookModel>();
 	
-	public  void addPerson() throws JsonParseException, JsonMappingException, IOException {
+	
+	
+	AddSateAddressbook newSate = new AddSateAddressbook();
+	ArrayList<Person> person = new ArrayList<Person>();
+	ArrayList<StateModel> state = new ArrayList<StateModel>();
+	
+	public void addState() throws JsonParseException, JsonMappingException, IOException {
+		StateModel addSate = new StateModel();
 		Person addPerson = new Person();
 		Address address = new Address();
-
-		//file is empty
-		         
 		if(file.length()!=0) {
-
-		details = (AddressBookModel) JsonUtility.readMapper(personInfo, details);
-		}
-
-		if (!details.getPerson().isEmpty()) {
-		person.addAll(details.getPerson());
-		}
-
-		System.out.println("Enter person information : ");
-		System.out.println("Enter first Name : ");
-		String firstName = Utility.scanString();
-		addPerson.setFirstName(firstName);
-
-		System.out.println("Enter lst Name : ");
-		String lastName = Utility.scanString();
-		addPerson.setLastName(lastName);
-
-		System.out.println("Enter Address : ");
-		System.out.println("Enter city name  : ");
-		String city =  Utility.scanString();
-		address.setCity(city);
-
-		System.out.println("Enter state name : ");
-		String state =  Utility.scanString();
-		address.setState(state);
-
-		System.out.println("Enter pin code : ");
-		int zip = Utility.scanInt();
-		address.setZip(zip);
-
-		addPerson.setAddress(address);
-
-		//Add person here
-		person.add(addPerson);
-
-		details.setAdressbook("adressbook1");
-		details.setPerson(person);
-
-		JsonUtility.writeMapper(personInfo,details);
-		
-//	//	AddressBookModel tempDetails = new AddressBookModel();
-//		Person addPerson = new Person();
-//		Address address = new Address();
-//		
-//		//file is empty
-//         
-//		 if(file.length()!=0) {
-//				
-//			 details = (AddressBookModel) JsonUtility.readMapper(personInfo, details);
-//			}
-//		 
-//		 if (!details.getPerson().isEmpty()) {
-//				person.addAll(details.getPerson());
-//			}
-//		
-//		System.out.println("Enter person information : ");
-//		System.out.println("Enter first Name : ");
-//		String firstName = Utility.scanString();
-//		addPerson.setFirstName(firstName);
-//		
-//		System.out.println("Enter last Name : ");
-//		String lastName = Utility.scanString();
-//		addPerson.setLastName(lastName);
-//		
-//		System.out.println("Enter Address : ");
-//		System.out.println("Enter city name  : ");
-//		String city = Utility.scanString();
-//		address.setCity(city);
-//		
-//		System.out.println("Enter state name : ");
-//		String state = Utility.scanString();
-//		address.setState(state);
-//		
-//		System.out.println("Enter pin code : ");
-//		int zip = Utility.scanInt();
-//		address.setZip(zip);
-//		
-//		addPerson.setAddress(address);
-//		
-//		//Add person here
-//		person.add(addPerson);
-//		
-//		details.setAdressbook("adressbook1");
-//		details.setPerson(person);
-//		
-//		JsonUtility.writeMapper(personInfo,details);
+			
+			newSate = (AddSateAddressbook) JsonUtility.readMapper(personInfo, newSate);
+			}
+		 
+		 if (!newSate.getStateModel().isEmpty()) {
+			    state.addAll(newSate.getStateModel());
+			}
+		    
+		    System.out.println("Enter state name");
+		    String stateName = Utility.scanString();
+		    String newsatename = stateName;
+ 		    boolean flag=true;
+		   // addSate.setState(stateName);
+		    int size=0;
+		    for(int i=0;i<newSate.getStateModel().size();i++) {
+		    	System.out.println(newSate.getStateModel().get(i).getState());
+		    	 if(newsatename.equals(newSate.getStateModel().get(i).getState())) {
+				    	flag = false;
+			            newsatename = 	addSate.getState();    	
+			            System.out.println("data : ");
+			            size=i;
+			            break;
+				    }
+		    	
+		    }
+		    if(flag==true) {
+		    //	System.out.println("Add state : ");
+		    	 addSate.setState(newsatename);
+		    	 System.out.println("Enter Adress book : ");
+					System.out.println("Enter first Name : ");
+					String firstName = Utility.scanString();
+					addPerson.setFirstName(firstName);
+					
+					System.out.println("Enter last Name : ");
+					String lastName = Utility.scanString();
+					addPerson.setLastName(lastName);
+					
+					System.out.println("Enter Address : ");
+					System.out.println("Enter city name  : ");
+					String city = Utility.scanString();
+					address.setCity(city);
+					
+				    System.out.println("Enter state name : ");
+					//String state = Utility.scanString();
+					address.setState(stateName);;
+					
+					System.out.println("Enter pin code : ");
+					int zip = Utility.scanInt();
+					address.setZip(zip);
+					
+					addPerson.setAddress(address);
+					person.add(addPerson);
+					addSate.setPerson(person);
+					state.add(addSate);
+					//state.get(1).setPerson(person);
+				    newSate.setStateModel(state);
+				   
+				   
+		    }else if(flag==false) {
+		    	    System.out.println("Enter Adress book : ");
+					System.out.println("Enter first Name : ");
+					String firstName = Utility.scanString();
+					addPerson.setFirstName(firstName);
+					
+					System.out.println("Enter last Name : ");
+					String lastName = Utility.scanString();
+					addPerson.setLastName(lastName);
+					
+					System.out.println("Enter Address : ");
+					System.out.println("Enter city name  : ");
+					String city = Utility.scanString();
+					address.setCity(city);
+					
+				    System.out.println("Enter state name : ");
+					//String state = Utility.scanString();
+					address.setState(newsatename);;
+					
+					System.out.println("Enter pin code : ");
+					int zip = Utility.scanInt();
+					address.setZip(zip);
+					
+					addPerson.setAddress(address);
+					person.add(size,addPerson);
+					addSate.setPerson(person);
+					state.add(addSate);
+					newSate.setStateModel(state);
+				   
+		    }
+		  //  addSate.setPerson(person);
+		   // addSate.setState(newsatename);
+		    JsonUtility.writeMapper(personInfo,newSate);
 	}
+	
+	/*
+	public  void addSate() throws JsonParseException, JsonMappingException, IOException {
+		 
+		AddressBookModel addSate = new AddressBookModel();
+		
+		  
+		 if(file.length()!=0) {
+				
+			 detail = (AddSate) JsonUtility.readMapper(personInfo, detail);
+			}
+		 
+		 if (!detail.getAddressBookModel().isEmpty()) {
+			  addbook.addAll(detail.getAddressBookModel());
+			}
+		    
+		    System.out.println("Enter state name");
+		    String stateName = Utility.scanString();
+		    addSate.setAdressbook(stateName);
+		    
+		    addbook.add(addSate);
+		    detail.setAddressBookModel(addbook);
+		    JsonUtility.writeMapper(personInfo,detail);
+		
+		
+	}
+
+	
+	public void print() {
+		
+	}
+	public void setPerson() throws JsonParseException, JsonMappingException, IOException {
+		//AddressBookModel tempDetails = new AddressBookModel();
+		Person addPerson = new Person();
+		Address address = new Address();
+		AddressBookModel addbook1 = new AddressBookModel();
+		//file is empty
+         
+		 if(file.length()!=0) {
+				
+			 detail = (AddSate) JsonUtility.readMapper(personInfo, detail);
+			}
+		 
+//		 if (!newAddressBook.getAddressbook1().isEmpty()) {
+//			 addbook.addAll(newAddressBook.getAddressbook1());
+//			}
+		 System.out.println("Enter state name : ");
+			String state = Utility.scanString();
+			System.out.println("size"+detail.getAddressBookModel().size());
+			int size =detail.getAddressBookModel().size();
+		for(int i=0;i<size;i++) {
+			System.out.println(detail.getAddressBookModel().get(i).getAdressbook());
+			System.out.println(i);
+			if(state.equals(detail.getAddressBookModel().get(i).getAdressbook())) {
+				
+			
+				System.out.println("Enter Adress book : ");
+				System.out.println("Enter first Name : ");
+				String firstName = Utility.scanString();
+				addPerson.setFirstName(firstName);
+				
+				System.out.println("Enter last Name : ");
+				String lastName = Utility.scanString();
+				addPerson.setLastName(lastName);
+				
+				System.out.println("Enter Address : ");
+				System.out.println("Enter city name  : ");
+				String city = Utility.scanString();
+				address.setCity(city);
+				
+			//	System.out.println("Enter state name : ");
+				//String state = Utility.scanString();
+				address.setState(state);
+				
+				System.out.println("Enter pin code : ");
+				int zip = Utility.scanInt();
+				address.setZip(zip);
+				
+				addPerson.setAddress(address);
+				
+				//Add person here
+				person.add(addPerson);
+				addbook1.setPerson(person);
+				addbook1.setAdressbook(state);
+				addbook.add(addbook1);
+				detail.setAddressBookModel(addbook);;
+				detail.setAddressbook12("state");
+				//JsonUtility.writeMapper(personInfo,detail);
+				
+				
+			}
+			   //if((i+1)!=posi)
+			 if (!detail.getAddressBookModel().isEmpty()) {
+				  addbook.addAll(detail.getAddressBookModel());
+				}
+			  
+		}
+		JsonUtility.writeMapper(personInfo,detail);
+	}
+	/*
 	public  void addAddressBook() throws JsonParseException, JsonMappingException, IOException {
 		AddressBookModel tempDetails = new AddressBookModel();
 		Person addPerson = new Person();
@@ -129,11 +233,11 @@ public class AddressBookMethod {
          
 		 if(file.length()!=0) {
 				
-			 details = (AddressBookModel) JsonUtility.readMapper(personInfo, details);
+			 newAddressBook = (AddressBookModel) JsonUtility.readMapper(personInfo, details);
 			}
 		 
-		 if (!details.getPerson().isEmpty()) {
-				person.addAll(details.getPerson());
+		 if (!newAddressBook.getPerson().isEmpty()) {
+				person.addAll(newAddressBook.getPerson());
 			}
 		
 		System.out.println("Enter Adress book : ");
@@ -288,8 +392,6 @@ public class AddressBookMethod {
 		     ArrayList<Person> printInfo = new ArrayList<Person>();
 
 		     File file = new File(personInfo);
-		     //String filename=Utility.scanString();
-		     //file.createNewFile("/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/"+".json");
 		     if (file.length() != 0) {
 		 details = (AddressBookModel) JsonUtility.readMapper(personInfo, details);
 		     }
@@ -314,89 +416,5 @@ public class AddressBookMethod {
 		      }
 		      JsonUtility.writeMapper(personInfo,details);
 		}
-	public void openState() throws JsonParseException, JsonMappingException, IOException {
-		System.out.println("States : ");
-		String[] string = new String[details.getPerson().size()];
-		for(int i=0;i<string.length;i++) {
-			string [i] = details.getPerson().get(i).getAddress().getState(); 
-		}
-		List<String> arrList = new ArrayList<String>();
-	     int cnt= 0;
-	       //List<String> arrList = Arrays.asList(arr);
-	       List<String> lenList = new ArrayList<String>();
-	          for(int i=0;i<string.length;i++){
-	        for(int j=i+1;j<string.length;j++){
-	           if(string[i].equals(string[j])){
-	             cnt+=1;
-	           }                
-	        }
-	        if(cnt<1){
-	          arrList.add(string[i]);
-	        }
-	          cnt=0;
-	        }
-
-	for(int k=0;k<arrList.size();k++){
-	            System.out.println(k+" "+arrList.get(k)+" State");
-	        }
-	
-	     System.out.println("select state ");
-	     String state = Utility.scanString();
-	    
-	     
-	     boolean flag= true;
-	     int id=0;
-         int choice;
-         while(flag) {
-      	   System.out.println("Enter your choice....");
-      	   System.out.println("1. print state data. ");
-      	   System.out.println("2. Add person information in address book. ");
-      	   System.out.println("3. Search person in address book. ");
-      	   System.out.println("4. Delete person information in address book.");
-      	   System.out.println("5. Close Address book.");
-      	   choice = Utility.scanInt();
-      	   switch (choice) {
-			case 1:
-				 System.out.println(state+" information : ");
-			     for(int k=0;k<details.getPerson().size();k++) {
-			    	    if(state.equals(details.getPerson().get(k).getAddress().getState())) {
-			    	    	System.out.println("First name is : "+details.getPerson().get(k).getFirstName());
-			    			System.out.println("Last name is : "+details.getPerson().get(k).getLastName());
-			    			System.out.println("city name is : "+details.getPerson().get(k).getAddress().getCity());
-			    			System.out.println("state name is : "+details.getPerson().get(k).getAddress().getState());
-			    			System.out.println("pin code is : "+details.getPerson().get(k).getAddress().getZip());
-			    			System.out.println();
-			    	    }
-			     }
-				  
-				 break;
-			case 2:
-				    addPerson();
-				   break;
-			case 3:
-				    searchPerson();
-				   break;
-			case 4:
-				   //printData();
-				   System.out.println("enter Id number which one you deleted : ");
-		           int position = Utility.scanInt();
-				   deletefile(position);
-			       break;
-			case 5:
-				  flag=false;
-				  System.out.println("close address book...");
-                break;
-			default:
-				System.out.println("wrong choice ...");
-				break;
-			}
-         }
-//
-//	    Set<String> myset  = new HashSet<String>();
-//	    Collections.addAll(myset,string);
-//
-//	       System.out.println(myset);
-	       
-	}
-
+    */
 }

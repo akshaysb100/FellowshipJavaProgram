@@ -2,16 +2,16 @@ package com.bridgelabz.jsonprogram.addressbook;
 
 import java.util.List;
 
-public class AddressBookModel {
-   
+public class StateModel {
+	
 	private String state;
 	private List<Person> person;
 	
-	public String getAdressbook() {
+	public String getState() {
 		return state;
 	}
-	public void setAdressbook(String adressbook) {
-		this.state = adressbook;
+	public void setState(String state) {
+		this.state = state;
 	}
 	public List<Person> getPerson() {
 		return person;
