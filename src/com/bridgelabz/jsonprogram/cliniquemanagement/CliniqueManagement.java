@@ -28,7 +28,7 @@ public class CliniqueManagement {
      	   System.out.println("3. take appoinment form doctor : ");
      	   System.out.println("4. print doctor pateint list : ");
      	   System.out.println("5. Delete Doctor form list");
-     	   System.out.println("6. Delete patient form list");
+     	   System.out.println("6. Delete patient from list");
      	   System.out.println("7. exit.");
      	   choice = Utility.scanInt();
      	   switch (choice) {

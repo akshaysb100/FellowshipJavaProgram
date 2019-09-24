@@ -138,9 +138,10 @@ String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/co
 				
 		}
 		 
-//		 if (!details.getDoctorList().isEmpty()) {
-//				doctor.addAll(details.getDoctorList());
-//			}
+		 if (!details.getDoctorList().isEmpty()) {
+				doctor.addAll(details.getDoctorList());
+			}
+		 
 		 if (!details.getPatients().isEmpty()) {
 				patients.addAll(details.getPatients());
 			}
@@ -171,7 +172,7 @@ String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/co
             		details.getPatients().remove(i);
             		
             		//newNumber = newNumber-1;
-            	//	doctor.get(i).setNewNumber(newNumber);
+            	    //doctor.get(i).setNewNumber(newNumber);
             	}
             	if((i+1)!=position) {
             		if(!details.getPatients().isEmpty()) {
@@ -184,14 +185,15 @@ String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/co
             int newNumber;
             for(int i=0;i<details.getDoctorList().size();i++) {
             	newNumber = details.getDoctorList().get(i).getNewNumber();
+            	System.out.println("new numbers is "+newNumber);
             	if(id == details.getDoctorList().get(i).getId()) {
             		newNumber = newNumber-1;
-            		System.out.println("newNumber "+newNumber);
-            		doctor.get(i).setNewNumber(newNumber);
+       		        doctor.get(i).setNewNumber(newNumber);
             		
             		//System.out.println("new number is"+details.getDoctorList().get(i).getNewNumber());
             	}
             }
+            
             JsonUtility.writeMapper(personInfo,details);
 		 
 		 
