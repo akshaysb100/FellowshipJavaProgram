@@ -1,5 +1,5 @@
 /******************************************************************************
- *  Purpose: Stock information
+ *  Purpose: Stock information pojo class
  *  
  *  @author  Akshay
  *  @version 1.0

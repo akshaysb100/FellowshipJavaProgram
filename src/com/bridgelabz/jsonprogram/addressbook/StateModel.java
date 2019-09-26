@@ -1,9 +1,17 @@
+/******************************************************************************
+ *  Purpose: person list and state information
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   20-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.jsonprogram.addressbook;
 
 import java.util.List;
 
 public class StateModel {
-	
+
 	private String state;
 	private List<Person> person;
 	

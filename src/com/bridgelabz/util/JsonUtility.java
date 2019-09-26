@@ -79,6 +79,7 @@ public class JsonUtility {
      public static String writeMapper(String path, Object object)
  			throws JsonParseException, JsonMappingException, IOException {
  		mapper.writeValue(new File(path), object);
+ 		
  		return "Success writing into file";
 
  	}
@@ -90,4 +91,5 @@ public class JsonUtility {
  		ObjectWriter writer = mapper.writerWithDefaultPrettyPrinter();
  		writer.writeValue((file), stockList);
  	}
+     
 } 

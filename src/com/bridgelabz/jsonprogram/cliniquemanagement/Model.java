@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose: list of doctors and list of patients 
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   20-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.jsonprogram.cliniquemanagement;
 
 import java.util.List;

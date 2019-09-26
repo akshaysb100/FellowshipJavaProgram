@@ -1,11 +1,24 @@
+/******************************************************************************
+ *  Purpose: Clinique Management all methods
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   20-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.jsonprogram.cliniquemanagement;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import com.bridgelabz.util.JsonUtility;
 import com.bridgelabz.util.Utility;
@@ -93,6 +106,7 @@ String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/co
 		if(file.length()!=0) {
 			
 			 details = (Model) JsonUtility.readMapper(personInfo, details);
+			 
 				
 		}
 		  
@@ -130,11 +144,17 @@ String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/co
             JsonUtility.writeMapper(personInfo,details);
 	}
 	
+	/**
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public void deletePatient() throws JsonParseException, JsonMappingException, IOException {
 		if(file.length()!=0) {
 			
 			 details = (Model) JsonUtility.readMapper(personInfo, details);
-		
+			 doctor.clear();
+			 patients.clear();
 				
 		}
 		 
@@ -357,6 +377,12 @@ String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/co
 		 }
 		 
 	}
+	/**
+	 * purpose : print patient list
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public void printDoctorPatients() throws JsonParseException, JsonMappingException, IOException {
 		
 
@@ -401,4 +427,53 @@ String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/co
 			}
 		}
 	}
+	
+	public void sortDoctor() throws JsonParseException, JsonMappingException, IOException {
+
+//		if(file.length()!=0) {
+//			
+//			 details = (Model) JsonUtility.readMapper(personInfo, details);
+//			 patients.clear();
+//			 doctor.clear();
+//			}
+//		 
+//		 if (!details.getDoctorList().isEmpty()) {
+//				doctor.addAll(details.getDoctorList());
+//			}
+//		 
+//		 if (!details.getPatients().isEmpty()) {
+//				patients.addAll(details.getPatients());
+//			}
+		
+		for (int i = 0; i < details.getDoctorList().size(); i++) {
+			if(file.length()!=0) {
+				
+				 details = (Model) JsonUtility.readMapper(personInfo, details);
+				 patients.clear();
+				 doctor.clear();
+				}
+			 
+			 if (!details.getDoctorList().isEmpty()) {
+					doctor.addAll(details.getDoctorList());
+				}
+			 
+			 if (!details.getPatients().isEmpty()) {
+					patients.addAll(details.getPatients());
+				}
+			String person1=details.getDoctorList().get(i).getDoctorName();
+			System.out.println(person1);
+			for (int j = i+1; j < doctor.size(); j++) {
+				String person2=details.getDoctorList().get(j).getDoctorName();
+				System.out.println(person2);
+				if(person1.compareTo(person2)<0)
+				{
+					doctor.get(i).setDoctorName(person2);
+					doctor.get(j).setDoctorName(person1);
+					JsonUtility.writeMapper(personInfo,details);
+				}
+			}
+		}
+		//JsonUtility.writeMapper(personInfo,details);
+	}
+	
 }

@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose: Doctor information and thats methods
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   20-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.jsonprogram.cliniquemanagement;
 
 public class Doctor {

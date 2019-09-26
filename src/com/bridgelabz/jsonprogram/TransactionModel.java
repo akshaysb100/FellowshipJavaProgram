@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose: Transaction Model
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   20-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.jsonprogram;
 
 import java.io.Serializable;

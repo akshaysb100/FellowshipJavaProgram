@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose: All Address book method
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   20-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.jsonprogram.addressbook;
 
 import java.io.File;
@@ -19,14 +27,15 @@ import com.bridgelabz.util.Utility;
 
 public class AddressBookMethod {
     
-	String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/personadd.json";
-	
+	//String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/personadd.json";
+	String personInfo="";
 	File file = new File(personInfo);
     
 	AddressBookModel details = new AddressBookModel();
 	ArrayList<Person> person = new ArrayList<Person>();
 	
-	public  void addPerson() throws JsonParseException, JsonMappingException, IOException {
+	
+	public  void addPerson(String personInfo) throws JsonParseException, JsonMappingException, IOException {
 		Person addPerson = new Person();
 		Address address = new Address();
 
@@ -41,12 +50,13 @@ public class AddressBookMethod {
 		person.addAll(details.getPerson());
 		}
 
+		
 		System.out.println("Enter person information : ");
 		System.out.println("Enter first Name : ");
 		String firstName = Utility.scanString();
 		addPerson.setFirstName(firstName);
 
-		System.out.println("Enter lst Name : ");
+		System.out.println("Enter last Name : ");
 		String lastName = Utility.scanString();
 		addPerson.setLastName(lastName);
 
@@ -120,6 +130,42 @@ public class AddressBookMethod {
 //		
 //		JsonUtility.writeMapper(personInfo,details);
 	}
+	  public void addState(String addreeBook) throws JsonParseException, JsonMappingException, IOException {
+		  Person addPerson = new Person();
+			Address address = new Address();
+
+			System.out.println("Eneter State name : ");
+			String state = Utility.scanString();
+			System.out.println("Enter person information : ");
+			System.out.println("Enter first Name : ");
+			String firstName = Utility.scanString();
+			addPerson.setFirstName(firstName);
+
+			System.out.println("Enter last Name : ");
+			String lastName = Utility.scanString();
+			addPerson.setLastName(lastName);
+
+			System.out.println("Enter Address : ");
+			System.out.println("Enter city name  : ");
+			String city =  Utility.scanString();
+			address.setCity(city);
+
+			address.setState(state);
+
+			System.out.println("Enter pin code : ");
+			int zip = Utility.scanInt();
+			address.setZip(zip);
+
+			addPerson.setAddress(address);
+
+			//Add person here
+			person.add(addPerson);
+
+			details.setAdressbook("adressbook1");
+			details.setPerson(person);
+
+			JsonUtility.writeMapper(addreeBook,details);
+	  }
 	public  void addAddressBook() throws JsonParseException, JsonMappingException, IOException {
 		AddressBookModel tempDetails = new AddressBookModel();
 		Person addPerson = new Person();
@@ -255,7 +301,7 @@ public class AddressBookMethod {
 		    	int choice = Utility.scanInt();
 		    	switch (choice) {
 				case 1:
-					    addPerson();
+					    addPerson(personInfo);
 					break;
 				case 2:
 					   System.out.println("Exit");
@@ -268,7 +314,11 @@ public class AddressBookMethod {
 	}
 	public void sortAddressbook() throws JsonParseException, JsonMappingException, IOException {
 		 details = (AddressBookModel) JsonUtility.readMapper(personInfo, details);
-			
+		 if (file.length() != 0) {
+			  details = (AddressBookModel) JsonUtility.readMapper(personInfo, details);
+		      }
+
+		      
 	      ArrayList<Person> printInfo = new ArrayList<Person>();
 	
 	      File file = new File(personInfo);
@@ -314,8 +364,16 @@ public class AddressBookMethod {
 		      }
 		      JsonUtility.writeMapper(personInfo,details);
 		}
-	public void openState() throws JsonParseException, JsonMappingException, IOException {
-		System.out.println("States : ");
+	public void openState(String addressBook) throws JsonParseException, JsonMappingException, IOException {
+		personInfo = addressBook;
+	 File file = new File(addressBook);
+		
+		 if (file.length() != 0) {
+			
+			  details = (AddressBookModel) JsonUtility.readMapper(addressBook, details);
+		      }
+
+		System.out.println("State : ");
 		String[] string = new String[details.getPerson().size()];
 		for(int i=0;i<string.length;i++) {
 			string [i] = details.getPerson().get(i).getAddress().getState(); 
@@ -371,7 +429,7 @@ public class AddressBookMethod {
 				  
 				 break;
 			case 2:
-				    addPerson();
+				    addPerson(personInfo);
 				   break;
 			case 3:
 				    searchPerson();

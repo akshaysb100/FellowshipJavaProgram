@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose: Clinique Management 
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   20-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.jsonprogram.cliniquemanagement;
 
 import java.io.IOException;
@@ -25,11 +33,10 @@ public class CliniqueManagement {
      	   System.out.println("Enter your choice....");
      	   System.out.println("1. Add doctor. ");
      	   System.out.println("2. print doctor list. ");
-     	   System.out.println("3. take appoinment form doctor : ");
+     	   System.out.println("3. take appoinment form patients : ");
      	   System.out.println("4. print doctor pateint list : ");
      	   System.out.println("5. Delete Doctor form list");
-     	   System.out.println("6. Delete patient from list");
-     	   System.out.println("7. exit.");
+     	   System.out.println("6. exit.");
      	   choice = Utility.scanInt();
      	   switch (choice) {
 			case 1:  
@@ -49,13 +56,11 @@ public class CliniqueManagement {
 				list.deleteDoctor();
 				break;
 			case 6:
-				 System.out.println("Delete patient form list");
-				 list.deletePatient();
-				 break;
-			case 7:
 				  flag=false;
 				  System.out.println("");
                  break;
+			case 7:
+				list.deletePatient();
 			default:
 				System.out.println("wrong choice ...");
 				 break;

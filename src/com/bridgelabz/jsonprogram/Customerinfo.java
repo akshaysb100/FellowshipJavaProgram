@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose : Customerinfo information pojo class
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   22-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.jsonprogram;
 
 public class Customerinfo {

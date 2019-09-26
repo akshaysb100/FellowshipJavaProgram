@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose: person information and pojo class 
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   20-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.jsonprogram.addressbook;
 
 public class Person {
