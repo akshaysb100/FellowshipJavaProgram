@@ -155,6 +155,20 @@ public class DataStructurUtility<T> {
 		    	}
 		    }
 		    
+             public void viewSate() {
+		    	int i=0;
+		    	if(head==null) {
+		    		System.out.println("List is empty : ");
+		    	}else {
+		    		Node temp=head;
+		    		while(temp!=null) {
+		    			i=i+1;
+		    			System.out.println(i+". "+temp.data+" ");
+		    			temp=temp.next;
+		    		}
+		    	}
+		    }
+		    
 		    
 		    /**
 		     * purpose : this function used to delete first element in string list
@@ -249,13 +263,26 @@ public class DataStructurUtility<T> {
 			            while(temp!=null) {
 			            	write.write(temp.data+" ");
 			            	temp=temp.next;
+			            	System.out.println("file");
 			            }
 			            write.close();
 		    	}catch (Exception e) {
 					System.out.println("Not write anythink in file : ");
 				}
 		    }
-		    
+		    public  void addState() {
+		    	try {
+		    		 FileWriter write=new FileWriter("/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/com/bridgelabz/jsonfiles/states.txt");
+			            Node temp=head;
+			            while(temp!=null) {
+			            	write.write(temp.data+" ");
+			            	temp=temp.next;
+			            }
+			            write.close();
+		    	}catch (Exception e) {
+					System.out.println("Not write anythink in file : ");
+				}
+		    }
 		    /**
 			  * purpose : this function used to add integer data at first posititon 
 			  * 

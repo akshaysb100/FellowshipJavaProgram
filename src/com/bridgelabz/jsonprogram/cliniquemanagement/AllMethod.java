@@ -83,7 +83,7 @@ String personInfo = "/home/admin/seleninum/eclipse-workspace/JavaPrograms/src/co
 		addDoctor.setOdlNumber((id+5));
 		doctor.add(addDoctor);
 		details.setDoctorList(doctor);
-		JsonUtility.writeMapper(personInfo,details);
+	    JsonUtility.writeMapper(personInfo,details);
 		
 		
 	}

@@ -12,6 +12,7 @@ public class Person {
 	
    private String firstName;
    private String lastName;
+   private String mobileNumber;
    private Address address;
    
 public String getFirstName() {
@@ -31,6 +32,12 @@ public Address getAddress() {
 }
 public void setAddress(Address address) {
 	this.address = address;
+}
+public String getMobileNumber() {
+	return mobileNumber;
+}
+public void setMobileNumber(String mobileNumber) {
+	this.mobileNumber = mobileNumber;
 }
    
 }

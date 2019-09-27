@@ -25,6 +25,7 @@ public class CashCounter {
         int people=list.scanInt();
         System.out.println("enter people in queue : ");
         for(int index=1;index<=people;index++) {
+        	System.out.println("Enter name of person : ");
         	list.enqueue(list.scanString());
         }
         
@@ -38,7 +39,7 @@ public class CashCounter {
         	 flag=true;
         	 System.out.println("bank amount is : "+startingAmount);
         	 System.out.println("\nHi "+list.peekQueue());
-        	System.out.println("Enter your choice \n1.cash deposit\n2.cash withdraw\n3.exit");
+        	System.out.println("Enter your choice \n1.cash deposit\n2.cash withdraw\n3.add person in queue\n4.person in queue\n5.exit");
         	choice=list.scanInt();
   
         	switch(choice) {
@@ -50,16 +51,27 @@ public class CashCounter {
         	case 2: 
         		System.out.println(list.peekQueue()+" Enter how much amount you withdraw : ");
         		amount = list.scanInt();
-        		startingAmount=startingAmount-amount;
+        		if(amount<=10000) {
+        			startingAmount=startingAmount-amount;	
+        		}       		
+        		else {
+        			System.out.println("You can take only 10000 amount in one day");
+        		}
         		   break;
         	case 3:
-        		   flag=false;
-        		   list.dequeue();
-        		 
-        		   break;
+        		System.out.println("Enter name of person : ");
+            	list.enqueue(list.scanString());
+        		break;
+        	case 4:
+        		//System.out.println("");
+     		   list.printQueue();
+        		 break;
+        	case 5:
+        		 flag=false;
+      		   list.dequeue();
             default :
         	        System.out.println("wrong choice enter : ");
-        	        
+        	        break;
         	       
         	}
         	
