@@ -1,6 +1,7 @@
 package com.bridgelabz.designpattern.singletonpattern;
 
 public class EagerInitializedSingleton {
+
 	static int i=0;
 	private static final EagerInitializedSingleton instance = new EagerInitializedSingleton();
     

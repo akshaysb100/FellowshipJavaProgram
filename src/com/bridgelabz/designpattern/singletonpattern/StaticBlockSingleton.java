@@ -1,9 +1,8 @@
 package com.bridgelabz.designpattern.singletonpattern;
 
 public class StaticBlockSingleton {
-	 private static StaticBlockSingleton instance;
-	    
-	    private StaticBlockSingleton(){}
+	private static StaticBlockSingleton instance;
+	private StaticBlockSingleton(){}
 	    
 	    //static block initialization for exception handling
 	    static{

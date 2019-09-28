@@ -1,5 +1,5 @@
 package com.bridgelabz.designpattern.singletonpattern;
 
-public class SimpleClass {
-	public SimpleClass() {}
+public class Main {
+
 }

@@ -11,7 +11,9 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectWriter;
 import org.codehaus.jackson.util.DefaultPrettyPrinter;
 
-import com.bridgelabz.jsonprogram.Stock;
+import com.bridgelabz.oop.Stock;
+
+
 
 public class JsonUtility {
      private static ObjectMapper mapper;
