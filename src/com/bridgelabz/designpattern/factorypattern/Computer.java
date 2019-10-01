@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose:  Computer information
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   27-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.designpattern.factorypattern;
 
 public abstract class Computer {

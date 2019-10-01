@@ -1,3 +1,11 @@
+/*****************************************************************************
+ *  Purpose : Eager Initialized Singleton
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   27-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.designpattern.singletonpattern;
 
 public class EagerInitializedSingleton {

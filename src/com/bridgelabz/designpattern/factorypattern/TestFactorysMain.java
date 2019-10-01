@@ -1,6 +1,14 @@
+/******************************************************************************
+ *  Purpose: 
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   27-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.designpattern.factorypattern;
 
-public class TestFactorys {
+public class TestFactorysMain {
 
 	public static void main(String[] args) {
         Computer pc = ComputerFactory.getComputer("pc","2 GB","500 GB","2.4 GHz");

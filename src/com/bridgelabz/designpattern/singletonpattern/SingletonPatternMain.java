@@ -1,10 +1,19 @@
+/******************************************************************************
+ *  Purpose : Singleton Pattern
+ *  
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   27-09-2019
+ *
+ *******************************************************************************/
 package com.bridgelabz.designpattern.singletonpattern;
 
 public class SingletonPatternMain {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		// Eager Initialized Singleton
-		
+		  // Eager Initialized Singleton
+		  
 		  EagerInitializedSingleton instanceOne = EagerInitializedSingleton.getInstance();
 		  int in =instanceOne.hashCode();
 		  System.out.println(""+in);
