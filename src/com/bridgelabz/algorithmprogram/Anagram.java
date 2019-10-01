@@ -15,9 +15,9 @@ public class Anagram {
 
 	public static void main(String[] args) {
 		System.out.println("Enter first string");
-		String string1=Utility.scanString();
+		String string1=Utility.scanStringLine();
 		System.out.println("Enter second string");
-		String string2=Utility.scanString();
+		String string2=Utility.scanStringLine();
 	    string1=string1.toLowerCase();
 		string2=string2.toLowerCase();
 		boolean value =AlgorithmUtility.Anagram(string1,string2);

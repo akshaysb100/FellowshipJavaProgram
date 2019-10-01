@@ -6,6 +6,7 @@
  *  @since   27-09-2019
  *
  *******************************************************************************/
+
 package com.bridgelabz.designpattern.singletonpattern;
 
 public class SingletonPatternMain {

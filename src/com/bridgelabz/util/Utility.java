@@ -38,6 +38,19 @@ public class Utility {
     	String value = scanner.next();
     	return value;
     }
+    
+    /**
+     * purpose : create function to Accept the String values from user
+     * 
+     * @return : value return String value
+     */
+    
+    public static String scanStringLine() {
+    	String value = scanner.nextLine();
+    	return value;
+    }
+    
+    
     public static double scanDouble() {
     	double value=scanner.nextDouble();
     	return value;
@@ -84,6 +97,8 @@ public class Utility {
          {
         	 //System.out.println("It is leap year");
         	return true;
+         }else if((year%100)==0) {
+        	 return false;
          }
 		else if ((year%4)==0) {
 
