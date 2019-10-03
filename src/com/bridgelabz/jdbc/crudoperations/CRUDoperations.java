@@ -31,6 +31,7 @@ public class CRUDoperations {
 			
 			switch (choice) {
 			case 1:
+				 
 				  sqlQuery = "CREATE TABLE REGISTRATION " +
 	 	                   "(id INTEGER not NULL, " +
 	 	                   " first VARCHAR(25), " + 

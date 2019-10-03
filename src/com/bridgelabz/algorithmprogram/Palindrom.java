@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Purpose: Check String is palindrom or not
+ *
+ *  @author  Akshay
+ *  @version 1.0
+ *  @since   11-09-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.algorithmprogram;
 
 import com.bridgelabz.util.AlgorithmUtility;
